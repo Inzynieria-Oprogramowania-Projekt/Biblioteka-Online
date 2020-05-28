@@ -42,6 +42,7 @@ public class ServerConnection {
                     "  username Varchar(20) NOT NULL," +
                     "  password Varchar(20) NOT NULL," +
                     "  email Varchar(25) NOT NULL," +
+                    "  birth_date DATE NOT NULL," +
                     "  balance Float(2) NOT NULL," +
                     "  is_employee Boolean NOT NULL," +
                     "  PRIMARY KEY (user_id)," +
@@ -49,7 +50,7 @@ public class ServerConnection {
                     ")");
 
             statement.execute("CREATE TABLE Books (" +
-                    "  book_id Int NOT NULL," +
+                    "  book_id Int NOT NULL GENERATED ALWAYS AS IDENTITY," +
                     "  title Varchar(20) NOT NULL," +
                     "  author_name Varchar(20) NOT NULL," +
                     "  author_surname Varchar(20) NOT NULL," +
@@ -60,7 +61,7 @@ public class ServerConnection {
                     ")");
 
             statement.execute("CREATE TABLE Orders(" +
-                    "  order_id Int NOT NULL," +
+                    "  order_id Int NOT NULL GENERATED ALWAYS AS IDENTITY," +
                     "  user_id Int NOT NULL," +
                     "  book_id Int NOT NULL," +
                     "  PRIMARY KEY (order_id)" +
@@ -71,7 +72,7 @@ public class ServerConnection {
             statement.execute("CREATE INDEX IX_Relationship6 ON Orders (book_id)");
 
             statement.execute("CREATE TABLE Reviews(" +
-                    "  review_id Int NOT NULL," +
+                    "  review_id Int NOT NULL GENERATED ALWAYS AS IDENTITY," +
                     "  user_id Int NOT NULL," +
                     "  book_id Int NOT NULL," +
                     "  rating Int NOT NULL," +
@@ -96,10 +97,10 @@ public class ServerConnection {
         }
     }
 
-    public void AddUser(String username, String email, String password, float balance, boolean is_worker) {
+    public void AddUser(String username, String email, String password, String birth_date, float balance, boolean is_worker) {
         try {
             statement = connection.createStatement();
-            statement.execute("INSERT INTO Users (username,email,password,balance,is_employee) VALUES ('" + username + "','" + email + "','" + password + "'," + balance + ",'" + is_worker + "')");
+            statement.execute("INSERT INTO Users (username,email,password,birth_date,balance,is_employee) VALUES ('" + username + "','" + email + "','" + password +"','"+birth_date+"'," + balance + ",'" + is_worker + "')");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -135,11 +136,11 @@ public class ServerConnection {
         return false;
     }
 
-    public int Register(String username, String email, String password) {
+    public int Register(String username, String email, String password, String birth_date) {
         if (LookForEmail(email) && LookForUsername(username)) return 1;
         if (LookForUsername(username)) return 2;
         if (LookForEmail(email)) return 3;
-        AddUser(username, email, password, 0f, false);
+        AddUser(username, email, password, birth_date, 0f, false);
         return 0;
     }
 
@@ -262,14 +263,22 @@ public class ServerConnection {
         }
     }
 
+    public void ChangePassword(String username, String password){
+        try{
+            connection.createStatement();
+            statement.execute("UPDATE Users SET password='"+password+"' WHERE username='"+username+"'");
+        } catch(SQLException e){e.printStackTrace();}
+    }
+
     public ArrayList<String> GetLatestBooks(int count) {
         ArrayList<String> al = new ArrayList<>();
         try {
             connection.createStatement();
-            ResultSet rs = statement.executeQuery("SELECT title,author,description,price FROM Books");
+            ResultSet rs = statement.executeQuery("SELECT title,author_name,author_surname,description,price FROM Books");
             if (rs.last()) {
                 al.add(rs.getString("title"));
-                al.add(rs.getString("author"));
+                al.add(rs.getString("author_name"));
+                al.add(rs.getString("author_surname"));
                 al.add(rs.getString("description"));
                 al.add(Float.toString(rs.getFloat("price")));
             }
@@ -277,7 +286,8 @@ public class ServerConnection {
             for (int i = 0; i < count - 1; i++) {
                 if (rs.previous()) {
                     al.add(rs.getString("title"));
-                    al.add(rs.getString("author"));
+                    al.add(rs.getString("author_name"));
+                    al.add(rs.getString("author_surname"));
                     al.add(rs.getString("description"));
                     al.add(Float.toString(rs.getFloat("price")));
                 }
@@ -286,6 +296,54 @@ public class ServerConnection {
             e.printStackTrace();
         }
         return al;
+    }
+
+    public ArrayList<String> SearchByTitle(String title){
+        ArrayList<String> res=new ArrayList<>();
+        try {
+            connection.createStatement();
+            ResultSet rs = statement.executeQuery("SELECT title,author_name,author_surname,price FROM Books WHERE title='"+title+"'");
+
+            while(rs.next()){
+                res.add(rs.getString("title"));
+                res.add(rs.getString("author_name"));
+                res.add(rs.getString("author_surname"));
+                res.add(Float.toString(rs.getFloat("price")));
+            }
+        } catch(SQLException e){e.printStackTrace();}
+        return res;
+    }
+
+    public ArrayList<String> SearchByAuthorsName(String name){
+        ArrayList<String> res=new ArrayList<>();
+        try {
+            connection.createStatement();
+            ResultSet rs = statement.executeQuery("SELECT title,author_name,author_surname,price FROM Books WHERE author_name='"+name+"'");
+
+            while(rs.next()){
+                res.add(rs.getString("title"));
+                res.add(rs.getString("author_name"));
+                res.add(rs.getString("author_surname"));
+                res.add(Float.toString(rs.getFloat("price")));
+            }
+        } catch(SQLException e){e.printStackTrace();}
+        return res;
+    }
+
+    public ArrayList<String> SearchByAuthorsSurname(String surname){
+        ArrayList<String> res=new ArrayList<>();
+        try {
+            connection.createStatement();
+            ResultSet rs = statement.executeQuery("SELECT title,author_name,author_surname,price FROM Books WHERE author_surname='"+surname+"'");
+
+            while(rs.next()){
+                res.add(rs.getString("title"));
+                res.add(rs.getString("author_name"));
+                res.add(rs.getString("author_surname"));
+                res.add(Float.toString(rs.getFloat("price")));
+            }
+        } catch(SQLException e){e.printStackTrace();}
+        return res;
     }
 
     public ArrayList<String> GetUsers() {
