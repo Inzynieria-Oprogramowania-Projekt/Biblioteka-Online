@@ -24,7 +24,7 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Wyjd&#x17a;"/>
+                <Property name="text" type="java.lang.String" value="Sutek Ewakuacji"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem2ActionPerformed"/>
@@ -59,41 +59,44 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="buttonExit" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="usernameLogin" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonExit" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
                   <Component id="usernamePassword" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="usernameLogin" alignment="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="fieldUsernameLogin" max="32767" attributes="0"/>
-                  <Component id="fieldPasswordLogin" max="32767" attributes="0"/>
-                  <Component id="buttonLogin" alignment="0" pref="167" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="fieldUsernameLogin" min="-2" pref="167" max="-2" attributes="0"/>
+                  <Component id="buttonLogin" alignment="0" min="-2" pref="167" max="-2" attributes="0"/>
+                  <Component id="fieldPasswordLogin" min="-2" pref="167" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="50" max="32767" attributes="0"/>
+              <EmptySpace pref="51" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="usernameLogin" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="fieldUsernameLogin" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="usernamePassword" min="-2" max="-2" attributes="0"/>
-                  <Component id="fieldPasswordLogin" min="-2" max="-2" attributes="0"/>
+                  <Component id="usernameLogin" min="-2" max="-2" attributes="0"/>
+                  <Component id="fieldUsernameLogin" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="usernamePassword" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fieldPasswordLogin" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="buttonExit" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
                   <Component id="buttonLogin" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="44" max="32767" attributes="0"/>
+              <EmptySpace pref="30" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -129,6 +132,11 @@
         <EventHandler event="componentHidden" listener="java.awt.event.ComponentListener" parameters="java.awt.event.ComponentEvent" handler="buttonLoginComponentHidden"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonLoginActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="LoginMistaken"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

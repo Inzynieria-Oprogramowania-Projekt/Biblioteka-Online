@@ -3,13 +3,6 @@
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
-      <SubComponents>
-        <Menu class="javax.swing.JMenu" name="jMenu1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="File"/>
-          </Properties>
-        </Menu>
-      </SubComponents>
     </Menu>
   </NonVisualComponents>
   <Properties>
@@ -66,10 +59,10 @@
                   <Component id="fieldMail" pref="164" max="32767" attributes="0"/>
                   <Component id="fieldResidence" pref="164" max="32767" attributes="0"/>
                   <Component id="fieldRepeatMail" max="32767" attributes="0"/>
-                  <Component id="fieldBirthDate" max="32767" attributes="0"/>
                   <Component id="fieldPassword" max="32767" attributes="0"/>
                   <Component id="fieldRepeatPassword" max="32767" attributes="0"/>
                   <Component id="buttonRegister" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jFormattedTextField1" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
           </Group>
@@ -108,7 +101,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="fieldRepeatMail" min="-2" pref="28" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="fieldBirthDate" min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="jFormattedTextField1" min="-2" pref="28" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="fieldResidence" min="-2" pref="28" max="-2" attributes="0"/>
                   </Group>
@@ -118,7 +111,7 @@
                   <Component id="buttonRegister" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                   <Component id="buttonExit" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="41" max="32767" attributes="0"/>
+              <EmptySpace pref="20" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -180,16 +173,19 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonExitActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="fieldBirthDate">
-    </Component>
     <Component class="javax.swing.JPasswordField" name="fieldPassword">
     </Component>
     <Component class="javax.swing.JPasswordField" name="fieldRepeatPassword">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelUsernameTaken">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Ukryty label UsernameTaken"/>
+        <Property name="text" type="java.lang.String" value="Nazwa u&#x17c;ytkownika zaj&#x119;ta"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField1">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFormattedTextField1ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

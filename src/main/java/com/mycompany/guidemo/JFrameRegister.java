@@ -41,12 +41,11 @@ public class JFrameRegister extends javax.swing.JFrame {
         fieldRepeatMail = new javax.swing.JTextField();
         buttonRegister = new javax.swing.JButton();
         buttonExit = new javax.swing.JButton();
-        fieldBirthDate = new javax.swing.JFormattedTextField();
         fieldPassword = new javax.swing.JPasswordField();
         fieldRepeatPassword = new javax.swing.JPasswordField();
         jLabelUsernameTaken = new javax.swing.JLabel();
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,11 +72,13 @@ public class JFrameRegister extends javax.swing.JFrame {
             }
         });
 
-        jLabelUsernameTaken.setText("Ukryty label UsernameTaken");
+        jLabelUsernameTaken.setText("Nazwa użytkownika zajęta");
 
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
-
+        jFormattedTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField1ActionPerformed(evt);
+            }
+        });
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -109,10 +110,10 @@ public class JFrameRegister extends javax.swing.JFrame {
                     .addComponent(fieldMail, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
                     .addComponent(fieldResidence, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
                     .addComponent(fieldRepeatMail)
-                    .addComponent(fieldBirthDate)
                     .addComponent(fieldPassword)
                     .addComponent(fieldRepeatPassword)
-                    .addComponent(buttonRegister, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(buttonRegister, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jFormattedTextField1))
                 .addGap(42, 42, 42))
         );
         layout.setVerticalGroup(
@@ -147,14 +148,14 @@ public class JFrameRegister extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(fieldRepeatMail, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(fieldBirthDate, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(fieldResidence, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonExit, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
@@ -165,6 +166,10 @@ public class JFrameRegister extends javax.swing.JFrame {
         dispose();
         
     }//GEN-LAST:event_buttonExitActionPerformed
+
+    private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,15 +209,14 @@ public class JFrameRegister extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonExit;
     private javax.swing.JButton buttonRegister;
-    private javax.swing.JFormattedTextField fieldBirthDate;
     private javax.swing.JTextField fieldMail;
     private javax.swing.JPasswordField fieldPassword;
     private javax.swing.JTextField fieldRepeatMail;
     private javax.swing.JPasswordField fieldRepeatPassword;
     private javax.swing.JTextField fieldResidence;
     private javax.swing.JTextField fieldUsername;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabelUsernameTaken;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JLabel labelBirthDate;
     private javax.swing.JLabel labelMail;
