@@ -9,12 +9,12 @@ package com.mycompany.guidemo;
  *
  * @author bgabr
  */
-public class JFrameKomentarz extends javax.swing.JFrame {
+public class JFrameRecoveryPasswordPassed extends javax.swing.JFrame {
 
     /**
-     * Creates new form JFrameKomentarz
+     * Creates new form JFrameRecoveryPasswordPassed
      */
-    public JFrameKomentarz() {
+    public JFrameRecoveryPasswordPassed() {
         initComponents();
     }
 
@@ -27,33 +27,27 @@ public class JFrameKomentarz extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        JButtonConfirm = new javax.swing.JButton();
-        JButtonHesitate = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Czy chcesz dodać komentarz?");
+        jButton1.setText("Ok");
 
-        JButtonConfirm.setText("Tak");
-        JButtonConfirm.setActionCommand("JButtonConfirm");
-
-        JButtonHesitate.setText("Nie");
-        JButtonHesitate.setActionCommand("JButtonHesitate");
+        jLabel1.setText("Na podany adres email został wysłany link do przywracania hasła");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(48, 48, 48)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(JButtonConfirm)
-                        .addGap(47, 47, 47)
-                        .addComponent(JButtonHesitate))
-                    .addComponent(jLabel1))
-                .addContainerGap(34, Short.MAX_VALUE))
+                        .addGap(130, 130, 130)
+                        .addComponent(jButton1)))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -61,10 +55,8 @@ public class JFrameKomentarz extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JButtonConfirm)
-                    .addComponent(JButtonHesitate))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jButton1)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
@@ -87,25 +79,26 @@ public class JFrameKomentarz extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrameKomentarz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameRecoveryPasswordPassed.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrameKomentarz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameRecoveryPasswordPassed.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrameKomentarz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameRecoveryPasswordPassed.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrameKomentarz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameRecoveryPasswordPassed.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFrameKomentarz().setVisible(true);
+                new JFrameRecoveryPasswordPassed().setVisible(true);
             }
-        })JButtonConfirm
+        });
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton JButtonConfirm;
-    private javax.swing.JButton JButtonHesitate;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

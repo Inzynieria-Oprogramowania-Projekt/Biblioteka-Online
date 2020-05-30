@@ -31,9 +31,9 @@ public class JFrameAccountPage extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        JButtonCart = new javax.swing.JButton();
+        JButtonLogout = new javax.swing.JButton();
+        JButtonCharge = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -43,14 +43,14 @@ public class JFrameAccountPage extends javax.swing.JFrame {
         jPasswordField2 = new javax.swing.JPasswordField();
         jLabel11 = new javax.swing.JLabel();
         jPasswordField3 = new javax.swing.JPasswordField();
-        jButton4 = new javax.swing.JButton();
+        JButtonChangePassword = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,16 +61,19 @@ public class JFrameAccountPage extends javax.swing.JFrame {
 
         jLabel3.setText("37,50 zł ");
 
-        jButton1.setText("Koszyk");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        JButtonCart.setText("Koszyk");
+        JButtonCart.setActionCommand("JButtonCart");
+        JButtonCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                JButtonCartActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Wyloguj");
+        JButtonLogout.setText("Wyloguj");
+        JButtonLogout.setActionCommand("JButtonLogout");
 
-        jButton3.setText("Doładuj");
+        JButtonCharge.setText("Doładuj");
+        JButtonCharge.setActionCommand("JButtonCharge");
 
         jLabel5.setText("Stan konta");
 
@@ -97,9 +100,9 @@ public class JFrameAccountPage extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton1)
-                                    .addComponent(jButton3)
-                                    .addComponent(jButton2))
+                                    .addComponent(JButtonCart)
+                                    .addComponent(JButtonCharge)
+                                    .addComponent(JButtonLogout))
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
@@ -114,11 +117,11 @@ public class JFrameAccountPage extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3)
+                .addComponent(JButtonCharge)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(JButtonCart)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(JButtonLogout)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -136,7 +139,8 @@ public class JFrameAccountPage extends javax.swing.JFrame {
 
         jPasswordField3.setText("jPasswordField3");
 
-        jButton4.setText("jButton4");
+        JButtonChangePassword.setText("Zmień Hasło");
+        JButtonChangePassword.setActionCommand("JButtonChangePassword");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -157,7 +161,7 @@ public class JFrameAccountPage extends javax.swing.JFrame {
                             .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel11)
                             .addComponent(jPasswordField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton4))
+                            .addComponent(JButtonChangePassword))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -178,7 +182,7 @@ public class JFrameAccountPage extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPasswordField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton4)
+                .addComponent(JButtonChangePassword)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -208,10 +212,12 @@ public class JFrameAccountPage extends javax.swing.JFrame {
         );
 
         jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        jMenuItem1.setText("Wyszukiwanie");
+        jMenuItem1.setActionCommand("JButtonSearch");
+        jMenu1.add(jMenuItem1);
+
+        jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
 
@@ -241,9 +247,9 @@ public class JFrameAccountPage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void JButtonCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButtonCartActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_JButtonCartActionPerformed
 
     /**
      * @param args the command line arguments
@@ -274,17 +280,17 @@ public class JFrameAccountPage extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
+            JButtonChargeoid run() {
                 new JFrameAccountPage().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton JButtonCart;
+    private javax.swing.JButton JButtonChangePassword;
+    private javax.swing.JButton JButtonCharge;
+    private javax.swing.JButton JButtonLogout;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -296,8 +302,8 @@ public class JFrameAccountPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

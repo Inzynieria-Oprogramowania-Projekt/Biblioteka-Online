@@ -48,7 +48,7 @@ public class JFrameSearch extends javax.swing.JFrame {
         });
 
         JButtonSearch.setText("Wyszukaj");
-        JButtonSearch.setActionCommand("Search");
+        JButtonSearch.setActionCommand("JButtonSearch");
 
         jLabel1.setText("Brak wyników wyszukiwania");
 

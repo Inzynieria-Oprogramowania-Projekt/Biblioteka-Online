@@ -42,8 +42,9 @@ public class JFrameLogin extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        JMenuItemRegister = new javax.swing.JMenuItem();
+        JMenuItemSutekEwakuacji = new javax.swing.JMenuItem();
+        JMenuItemRecoveryPassword = new javax.swing.JMenuItem();
 
         jPasswordField1.setText("jPasswordField1");
 
@@ -76,21 +77,24 @@ public class JFrameLogin extends javax.swing.JFrame {
 
         jMenu1.setText("File");
 
-        jMenuItem1.setText("Zarejestruj");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        JMenuItemRegister.setText("Zarejestruj");
+        JMenuItemRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                JMenuItemRegisterActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        jMenu1.add(JMenuItemRegister);
 
-        jMenuItem2.setText("Wyjdź");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        JMenuItemSutekEwakuacji.setText("Wyjdź");
+        JMenuItemSutekEwakuacji.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                JMenuItemSutekEwakuacjiActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
+        jMenu1.add(JMenuItemSutekEwakuacji);
+
+        JMenuItemRecoveryPassword.setText("Odzyskaj hasło");
+        jMenu1.add(JMenuItemRecoveryPassword);
 
         jMenuBar1.add(jMenu1);
 
@@ -112,7 +116,7 @@ public class JFrameLogin extends javax.swing.JFrame {
                     .addComponent(fieldUsernameLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fieldPasswordLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,10 +146,10 @@ public class JFrameLogin extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_buttonExitActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void JMenuItemSutekEwakuacjiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMenuItemSutekEwakuacjiActionPerformed
         // TODO add your handling code here:
         System.exit(0);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_JMenuItemSutekEwakuacjiActionPerformed
 
     private void buttonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLoginActionPerformed
         // TODO add your handling code here:
@@ -153,11 +157,11 @@ public class JFrameLogin extends javax.swing.JFrame {
         
     }//GEN-LAST:event_buttonLoginActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void JMenuItemRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMenuItemRegisterActionPerformed
         // TODO add your handling code here:
         register.setVisible(true);
         
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_JMenuItemRegisterActionPerformed
 
     private void buttonLoginComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_buttonLoginComponentHidden
         // TODO add your handling code here:
@@ -202,6 +206,9 @@ public class JFrameLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem JMenuItemRecoveryPassword;
+    private javax.swing.JMenuItem JMenuItemRegister;
+    private javax.swing.JMenuItem JMenuItemSutekEwakuacji;
     private javax.swing.JButton buttonExit;
     private javax.swing.JButton buttonLogin;
     private javax.swing.JPasswordField fieldPasswordLogin;
@@ -209,8 +216,6 @@ public class JFrameLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JLabel usernameLogin;
     private javax.swing.JLabel usernamePassword;

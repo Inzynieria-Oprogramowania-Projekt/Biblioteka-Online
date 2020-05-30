@@ -39,8 +39,8 @@ public class JFrameRegister extends javax.swing.JFrame {
         fieldMail = new javax.swing.JTextField();
         fieldResidence = new javax.swing.JTextField();
         fieldRepeatMail = new javax.swing.JTextField();
-        buttonRegister = new javax.swing.JButton();
-        buttonExit = new javax.swing.JButton();
+        JButtonRegister = new javax.swing.JButton();
+        JButtonExit = new javax.swing.JButton();
         fieldPassword = new javax.swing.JPasswordField();
         fieldRepeatPassword = new javax.swing.JPasswordField();
         jLabelUsernameTaken = new javax.swing.JLabel();
@@ -63,12 +63,14 @@ public class JFrameRegister extends javax.swing.JFrame {
 
         labelRepeatMail.setText("Powtórz e-mail");
 
-        buttonRegister.setText("Zarejestruj");
+        JButtonRegister.setText("Zarejestruj");
+        JButtonRegister.setActionCommand("JButtonRegister");
 
-        buttonExit.setText("Cofnij");
-        buttonExit.addActionListener(new java.awt.event.ActionListener() {
+        JButtonExit.setText("Cofnij");
+        JButtonExit.setActionCommand("JButtonUndo");
+        JButtonExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonExitActionPerformed(evt);
+                JButtonExitActionPerformed(evt);
             }
         });
 
@@ -102,7 +104,7 @@ public class JFrameRegister extends javax.swing.JFrame {
                         .addGap(50, 50, 50))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(buttonExit, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(JButtonExit, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelUsernameTaken, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -112,7 +114,7 @@ public class JFrameRegister extends javax.swing.JFrame {
                     .addComponent(fieldRepeatMail)
                     .addComponent(fieldPassword)
                     .addComponent(fieldRepeatPassword)
-                    .addComponent(buttonRegister, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(JButtonRegister, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jFormattedTextField1))
                 .addGap(42, 42, 42))
         );
@@ -153,19 +155,19 @@ public class JFrameRegister extends javax.swing.JFrame {
                         .addComponent(fieldResidence, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonExit, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JButtonRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JButtonExit, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonExitActionPerformed
+    private void JButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButtonExitActionPerformed
         // TODO add your handling code here:
         dispose();
         
-    }//GEN-LAST:event_buttonExitActionPerformed
+    }//GEN-LAST:event_JButtonExitActionPerformed
 
     private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
         // TODO add your handling code here:
@@ -207,8 +209,8 @@ public class JFrameRegister extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonExit;
-    private javax.swing.JButton buttonRegister;
+    private javax.swing.JButton JButtonExit;
+    private javax.swing.JButton JButtonRegister;
     private javax.swing.JTextField fieldMail;
     private javax.swing.JPasswordField fieldPassword;
     private javax.swing.JTextField fieldRepeatMail;
