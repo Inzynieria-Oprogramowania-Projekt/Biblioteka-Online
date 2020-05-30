@@ -84,7 +84,7 @@ public class JFrameLogin extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem1);
 
-        jMenuItem2.setText("Sutek Ewakuacji");
+        jMenuItem2.setText("Wyjdź");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem2ActionPerformed(evt);
