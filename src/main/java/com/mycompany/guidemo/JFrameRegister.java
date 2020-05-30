@@ -32,12 +32,10 @@ public class JFrameRegister extends javax.swing.JFrame {
         labelPassword = new javax.swing.JLabel();
         labelRepeatPassword = new javax.swing.JLabel();
         labelBirthDate = new javax.swing.JLabel();
-        labelResidence = new javax.swing.JLabel();
         labelMail = new javax.swing.JLabel();
         labelRepeatMail = new javax.swing.JLabel();
         fieldUsername = new javax.swing.JTextField();
         fieldMail = new javax.swing.JTextField();
-        fieldResidence = new javax.swing.JTextField();
         fieldRepeatMail = new javax.swing.JTextField();
         JButtonRegister = new javax.swing.JButton();
         JButtonExit = new javax.swing.JButton();
@@ -56,8 +54,6 @@ public class JFrameRegister extends javax.swing.JFrame {
         labelRepeatPassword.setText("Powtórz hasło");
 
         labelBirthDate.setText("Data urodzenia");
-
-        labelResidence.setText("Miejsce zamieszkania");
 
         labelMail.setText("e-mail");
 
@@ -97,10 +93,11 @@ public class JFrameRegister extends javax.swing.JFrame {
                                 .addComponent(labelRepeatPassword)
                                 .addComponent(labelPassword)
                                 .addComponent(labelUsername))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(labelRepeatMail)
-                                .addComponent(labelResidence)
-                                .addComponent(labelBirthDate)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(27, 27, 27)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(labelRepeatMail)
+                                    .addComponent(labelBirthDate))))
                         .addGap(50, 50, 50))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
@@ -110,7 +107,6 @@ public class JFrameRegister extends javax.swing.JFrame {
                     .addComponent(jLabelUsernameTaken, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(fieldUsername)
                     .addComponent(fieldMail, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
-                    .addComponent(fieldResidence, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
                     .addComponent(fieldRepeatMail)
                     .addComponent(fieldPassword)
                     .addComponent(fieldRepeatPassword)
@@ -136,9 +132,7 @@ public class JFrameRegister extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(labelRepeatMail)
                         .addGap(18, 18, 18)
-                        .addComponent(labelBirthDate)
-                        .addGap(18, 18, 18)
-                        .addComponent(labelResidence))
+                        .addComponent(labelBirthDate))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(fieldUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -150,14 +144,12 @@ public class JFrameRegister extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(fieldRepeatMail, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(fieldResidence, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(48, 48, 48)
+                        .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JButtonRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JButtonExit, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -215,7 +207,6 @@ public class JFrameRegister extends javax.swing.JFrame {
     private javax.swing.JPasswordField fieldPassword;
     private javax.swing.JTextField fieldRepeatMail;
     private javax.swing.JPasswordField fieldRepeatPassword;
-    private javax.swing.JTextField fieldResidence;
     private javax.swing.JTextField fieldUsername;
     private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabelUsernameTaken;
@@ -225,7 +216,6 @@ public class JFrameRegister extends javax.swing.JFrame {
     private javax.swing.JLabel labelPassword;
     private javax.swing.JLabel labelRepeatMail;
     private javax.swing.JLabel labelRepeatPassword;
-    private javax.swing.JLabel labelResidence;
     private javax.swing.JLabel labelUsername;
     // End of variables declaration//GEN-END:variables
 }

@@ -148,6 +148,8 @@ public class JFrameBookPage extends javax.swing.JFrame {
 
         jLabel9.setText("Twoja ocena to :");
 
+        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(0, 0, 5, 1));
+
         JButtonUserGrade.setText("Oceń");
         JButtonUserGrade.setActionCommand("JButtonUserGrade");
 

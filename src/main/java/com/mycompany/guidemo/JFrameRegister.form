@@ -39,10 +39,12 @@
                               <Component id="labelPassword" min="-2" max="-2" attributes="0"/>
                               <Component id="labelUsername" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                              <Component id="labelRepeatMail" min="-2" max="-2" attributes="0"/>
-                              <Component id="labelResidence" min="-2" max="-2" attributes="0"/>
-                              <Component id="labelBirthDate" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="labelRepeatMail" min="-2" max="-2" attributes="0"/>
+                                  <Component id="labelBirthDate" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
@@ -57,7 +59,6 @@
                   <Component id="jLabelUsernameTaken" max="32767" attributes="0"/>
                   <Component id="fieldUsername" max="32767" attributes="0"/>
                   <Component id="fieldMail" pref="164" max="32767" attributes="0"/>
-                  <Component id="fieldResidence" pref="164" max="32767" attributes="0"/>
                   <Component id="fieldRepeatMail" max="32767" attributes="0"/>
                   <Component id="fieldPassword" max="32767" attributes="0"/>
                   <Component id="fieldRepeatPassword" max="32767" attributes="0"/>
@@ -87,8 +88,6 @@
                       <Component id="labelRepeatMail" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="labelBirthDate" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="labelResidence" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="fieldUsername" min="-2" pref="28" max="-2" attributes="0"/>
@@ -102,16 +101,14 @@
                       <Component id="fieldRepeatMail" min="-2" pref="28" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jFormattedTextField1" min="-2" pref="28" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="fieldResidence" min="-2" pref="28" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="JButtonRegister" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                   <Component id="JButtonExit" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="20" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -137,11 +134,6 @@
         <Property name="text" type="java.lang.String" value="Data urodzenia"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelResidence">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Miejsce zamieszkania"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JLabel" name="labelMail">
       <Properties>
         <Property name="text" type="java.lang.String" value="e-mail"/>
@@ -155,8 +147,6 @@
     <Component class="javax.swing.JTextField" name="fieldUsername">
     </Component>
     <Component class="javax.swing.JTextField" name="fieldMail">
-    </Component>
-    <Component class="javax.swing.JTextField" name="fieldResidence">
     </Component>
     <Component class="javax.swing.JTextField" name="fieldRepeatMail">
     </Component>
