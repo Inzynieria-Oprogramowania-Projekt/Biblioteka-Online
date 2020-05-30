@@ -305,4 +305,188 @@ public class JFrameAccountPage extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+
+    public javax.swing.JButton getJButtonCart() {
+        return JButtonCart;
+    }
+
+    public javax.swing.JButton getJButtonChangePassword() {
+        return JButtonChangePassword;
+    }
+
+    public javax.swing.JButton getJButtonCharge() {
+        return JButtonCharge;
+    }
+
+    public javax.swing.JButton getJButtonLogout() {
+        return JButtonLogout;
+    }
+
+    public javax.swing.JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public javax.swing.JLabel getjLabel10() {
+        return jLabel10;
+    }
+
+    public javax.swing.JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    public javax.swing.JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public javax.swing.JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public javax.swing.JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public javax.swing.JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public javax.swing.JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+    public javax.swing.JLabel getjLabel9() {
+        return jLabel9;
+    }
+
+    public javax.swing.JMenu getjMenu1() {
+        return jMenu1;
+    }
+
+    public javax.swing.JMenuBar getjMenuBar1() {
+        return jMenuBar1;
+    }
+
+    public javax.swing.JMenuItem getjMenuItem1() {
+        return jMenuItem1;
+    }
+
+    public javax.swing.JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public javax.swing.JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    public javax.swing.JPasswordField getjPasswordField1() {
+        return jPasswordField1;
+    }
+
+    public javax.swing.JPasswordField getjPasswordField2() {
+        return jPasswordField2;
+    }
+
+    public javax.swing.JPasswordField getjPasswordField3() {
+        return jPasswordField3;
+    }
+
+    public javax.swing.JScrollPane getjScrollPane2() {
+        return jScrollPane2;
+    }
+
+    public javax.swing.JTable getjTable1() {
+        return jTable1;
+    }
+
+    public void setJButtonCart(javax.swing.JButton JButtonCart) {
+        this.JButtonCart = JButtonCart;
+    }
+
+    public void setJButtonChangePassword(javax.swing.JButton JButtonChangePassword) {
+        this.JButtonChangePassword = JButtonChangePassword;
+    }
+
+    public void setJButtonCharge(javax.swing.JButton JButtonCharge) {
+        this.JButtonCharge = JButtonCharge;
+    }
+
+    public void setJButtonLogout(javax.swing.JButton JButtonLogout) {
+        this.JButtonLogout = JButtonLogout;
+    }
+
+    public void setjLabel1(javax.swing.JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public void setjLabel10(javax.swing.JLabel jLabel10) {
+        this.jLabel10 = jLabel10;
+    }
+
+    public void setjLabel11(javax.swing.JLabel jLabel11) {
+        this.jLabel11 = jLabel11;
+    }
+
+    public void setjLabel2(javax.swing.JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public void setjLabel3(javax.swing.JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public void setjLabel4(javax.swing.JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public void setjLabel5(javax.swing.JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public void setjLabel8(javax.swing.JLabel jLabel8) {
+        this.jLabel8 = jLabel8;
+    }
+
+    public void setjLabel9(javax.swing.JLabel jLabel9) {
+        this.jLabel9 = jLabel9;
+    }
+
+    public void setjMenu1(javax.swing.JMenu jMenu1) {
+        this.jMenu1 = jMenu1;
+    }
+
+    public void setjMenuBar1(javax.swing.JMenuBar jMenuBar1) {
+        this.jMenuBar1 = jMenuBar1;
+    }
+
+    public void setjMenuItem1(javax.swing.JMenuItem jMenuItem1) {
+        this.jMenuItem1 = jMenuItem1;
+    }
+
+    public void setjPanel1(javax.swing.JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public void setjPanel2(javax.swing.JPanel jPanel2) {
+        this.jPanel2 = jPanel2;
+    }
+
+    public void setjPasswordField1(javax.swing.JPasswordField jPasswordField1) {
+        this.jPasswordField1 = jPasswordField1;
+    }
+
+    public void setjPasswordField2(javax.swing.JPasswordField jPasswordField2) {
+        this.jPasswordField2 = jPasswordField2;
+    }
+
+    public void setjPasswordField3(javax.swing.JPasswordField jPasswordField3) {
+        this.jPasswordField3 = jPasswordField3;
+    }
+
+    public void setjScrollPane2(javax.swing.JScrollPane jScrollPane2) {
+        this.jScrollPane2 = jScrollPane2;
+    }
+
+    public void setjTable1(javax.swing.JTable jTable1) {
+        this.jTable1 = jTable1;
+    }
 }

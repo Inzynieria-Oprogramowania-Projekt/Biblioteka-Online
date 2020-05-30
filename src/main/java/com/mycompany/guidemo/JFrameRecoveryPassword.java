@@ -132,4 +132,44 @@ public class JFrameRecoveryPassword extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+
+    public javax.swing.JButton getJButtonConfirm() {
+        return JButtonConfirm;
+    }
+
+    public javax.swing.JButton getJButtonUndo() {
+        return JButtonUndo;
+    }
+
+    public javax.swing.JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public javax.swing.JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public javax.swing.JTextField getjTextField1() {
+        return jTextField1;
+    }
+
+    public void setJButtonConfirm(javax.swing.JButton JButtonConfirm) {
+        this.JButtonConfirm = JButtonConfirm;
+    }
+
+    public void setJButtonUndo(javax.swing.JButton JButtonUndo) {
+        this.JButtonUndo = JButtonUndo;
+    }
+
+    public void setjLabel1(javax.swing.JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public void setjLabel2(javax.swing.JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public void setjTextField1(javax.swing.JTextField jTextField1) {
+        this.jTextField1 = jTextField1;
+    }
 }

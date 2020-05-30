@@ -209,4 +209,116 @@ public class JFrameAddBook extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
+
+    public javax.swing.JButton getJButtonAddAvatar() {
+        return JButtonAddAvatar;
+    }
+
+    public javax.swing.JButton getJButtonAddBook() {
+        return JButtonAddBook;
+    }
+
+    public javax.swing.JButton getJButtonAddDescription() {
+        return JButtonAddDescription;
+    }
+
+    public javax.swing.JButton getJButtonUploadBook() {
+        return JButtonUploadBook;
+    }
+
+    public javax.swing.JFileChooser getjFileChooser1() {
+        return jFileChooser1;
+    }
+
+    public javax.swing.JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public javax.swing.JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public javax.swing.JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public javax.swing.JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public javax.swing.JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public javax.swing.JTextArea getjTextArea1() {
+        return jTextArea1;
+    }
+
+    public javax.swing.JTextField getjTextField1() {
+        return jTextField1;
+    }
+
+    public javax.swing.JTextField getjTextField2() {
+        return jTextField2;
+    }
+
+    public javax.swing.JTextField getjTextField3() {
+        return jTextField3;
+    }
+
+    public void setJButtonAddAvatar(javax.swing.JButton JButtonAddAvatar) {
+        this.JButtonAddAvatar = JButtonAddAvatar;
+    }
+
+    public void setJButtonAddBook(javax.swing.JButton JButtonAddBook) {
+        this.JButtonAddBook = JButtonAddBook;
+    }
+
+    public void setJButtonAddDescription(javax.swing.JButton JButtonAddDescription) {
+        this.JButtonAddDescription = JButtonAddDescription;
+    }
+
+    public void setJButtonUploadBook(javax.swing.JButton JButtonUploadBook) {
+        this.JButtonUploadBook = JButtonUploadBook;
+    }
+
+    public void setjFileChooser1(javax.swing.JFileChooser jFileChooser1) {
+        this.jFileChooser1 = jFileChooser1;
+    }
+
+    public void setjLabel1(javax.swing.JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public void setjLabel2(javax.swing.JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public void setjLabel3(javax.swing.JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public void setjLabel4(javax.swing.JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public void setjScrollPane1(javax.swing.JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public void setjTextArea1(javax.swing.JTextArea jTextArea1) {
+        this.jTextArea1 = jTextArea1;
+    }
+
+    public void setjTextField1(javax.swing.JTextField jTextField1) {
+        this.jTextField1 = jTextField1;
+    }
+
+    public void setjTextField2(javax.swing.JTextField jTextField2) {
+        this.jTextField2 = jTextField2;
+    }
+
+    public void setjTextField3(javax.swing.JTextField jTextField3) {
+        this.jTextField3 = jTextField3;
+    }
 }

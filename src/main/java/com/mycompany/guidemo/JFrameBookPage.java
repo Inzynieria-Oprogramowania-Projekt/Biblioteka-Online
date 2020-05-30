@@ -332,4 +332,188 @@ public class JFrameBookPage extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     // End of variables declaration//GEN-END:variables
+
+    public javax.swing.JButton getJButtonBuy() {
+        return JButtonBuy;
+    }
+
+    public javax.swing.JButton getJButtonHesitate() {
+        return JButtonHesitate;
+    }
+
+    public javax.swing.JButton getJButtonOrder() {
+        return JButtonOrder;
+    }
+
+    public javax.swing.JButton getJButtonUserGrade() {
+        return JButtonUserGrade;
+    }
+
+    public javax.swing.JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public javax.swing.JLabel getjLabel10() {
+        return jLabel10;
+    }
+
+    public javax.swing.JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public javax.swing.JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public javax.swing.JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public javax.swing.JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public javax.swing.JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public javax.swing.JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public javax.swing.JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+    public javax.swing.JLabel getjLabel9() {
+        return jLabel9;
+    }
+
+    public javax.swing.JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public javax.swing.JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    public javax.swing.JPanel getjPanel3() {
+        return jPanel3;
+    }
+
+    public javax.swing.JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public javax.swing.JScrollPane getjScrollPane2() {
+        return jScrollPane2;
+    }
+
+    public javax.swing.JSeparator getjSeparator1() {
+        return jSeparator1;
+    }
+
+    public javax.swing.JSpinner getjSpinner1() {
+        return jSpinner1;
+    }
+
+    public javax.swing.JTextArea getjTextArea1() {
+        return jTextArea1;
+    }
+
+    public javax.swing.JTextArea getjTextArea2() {
+        return jTextArea2;
+    }
+
+    public void setJButtonBuy(javax.swing.JButton JButtonBuy) {
+        this.JButtonBuy = JButtonBuy;
+    }
+
+    public void setJButtonHesitate(javax.swing.JButton JButtonHesitate) {
+        this.JButtonHesitate = JButtonHesitate;
+    }
+
+    public void setJButtonOrder(javax.swing.JButton JButtonOrder) {
+        this.JButtonOrder = JButtonOrder;
+    }
+
+    public void setJButtonUserGrade(javax.swing.JButton JButtonUserGrade) {
+        this.JButtonUserGrade = JButtonUserGrade;
+    }
+
+    public void setjLabel1(javax.swing.JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public void setjLabel10(javax.swing.JLabel jLabel10) {
+        this.jLabel10 = jLabel10;
+    }
+
+    public void setjLabel2(javax.swing.JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public void setjLabel3(javax.swing.JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public void setjLabel4(javax.swing.JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public void setjLabel5(javax.swing.JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public void setjLabel6(javax.swing.JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public void setjLabel7(javax.swing.JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public void setjLabel8(javax.swing.JLabel jLabel8) {
+        this.jLabel8 = jLabel8;
+    }
+
+    public void setjLabel9(javax.swing.JLabel jLabel9) {
+        this.jLabel9 = jLabel9;
+    }
+
+    public void setjPanel1(javax.swing.JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public void setjPanel2(javax.swing.JPanel jPanel2) {
+        this.jPanel2 = jPanel2;
+    }
+
+    public void setjPanel3(javax.swing.JPanel jPanel3) {
+        this.jPanel3 = jPanel3;
+    }
+
+    public void setjScrollPane1(javax.swing.JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public void setjScrollPane2(javax.swing.JScrollPane jScrollPane2) {
+        this.jScrollPane2 = jScrollPane2;
+    }
+
+    public void setjSeparator1(javax.swing.JSeparator jSeparator1) {
+        this.jSeparator1 = jSeparator1;
+    }
+
+    public void setjSpinner1(javax.swing.JSpinner jSpinner1) {
+        this.jSpinner1 = jSpinner1;
+    }
+
+    public void setjTextArea1(javax.swing.JTextArea jTextArea1) {
+        this.jTextArea1 = jTextArea1;
+    }
+
+    public void setjTextArea2(javax.swing.JTextArea jTextArea2) {
+        this.jTextArea2 = jTextArea2;
+    }
 }

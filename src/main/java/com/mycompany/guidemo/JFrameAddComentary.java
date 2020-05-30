@@ -115,4 +115,28 @@ public class JFrameAddComentary extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
+
+    public javax.swing.JButton getJButtonAddComentary() {
+        return JButtonAddComentary;
+    }
+
+    public javax.swing.JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public javax.swing.JTextArea getjTextArea1() {
+        return jTextArea1;
+    }
+
+    public void setJButtonAddComentary(javax.swing.JButton JButtonAddComentary) {
+        this.JButtonAddComentary = JButtonAddComentary;
+    }
+
+    public void setjScrollPane1(javax.swing.JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public void setjTextArea1(javax.swing.JTextArea jTextArea1) {
+        this.jTextArea1 = jTextArea1;
+    }
 }

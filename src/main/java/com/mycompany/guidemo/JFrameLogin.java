@@ -18,7 +18,7 @@ public class JFrameLogin extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
-    JFrameRegister register = new JFrameRegister();
+    private JFrameRegister register = new JFrameRegister();
     public JFrameLogin() {
         initComponents();
     }
@@ -220,4 +220,116 @@ public class JFrameLogin extends javax.swing.JFrame {
     private javax.swing.JLabel usernameLogin;
     private javax.swing.JLabel usernamePassword;
     // End of variables declaration//GEN-END:variables
+
+    public javax.swing.JMenuItem getJMenuItemRecoveryPassword() {
+        return JMenuItemRecoveryPassword;
+    }
+
+    public JFrameRegister getRegister() {
+        return register;
+    }
+
+    public javax.swing.JMenuItem getJMenuItemRegister() {
+        return JMenuItemRegister;
+    }
+
+    public javax.swing.JMenuItem getJMenuItemSutekEwakuacji() {
+        return JMenuItemSutekEwakuacji;
+    }
+
+    public javax.swing.JButton getButtonExit() {
+        return buttonExit;
+    }
+
+    public javax.swing.JButton getButtonLogin() {
+        return buttonLogin;
+    }
+
+    public javax.swing.JPasswordField getFieldPasswordLogin() {
+        return fieldPasswordLogin;
+    }
+
+    public javax.swing.JTextField getFieldUsernameLogin() {
+        return fieldUsernameLogin;
+    }
+
+    public javax.swing.JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public javax.swing.JMenu getjMenu1() {
+        return jMenu1;
+    }
+
+    public javax.swing.JMenuBar getjMenuBar1() {
+        return jMenuBar1;
+    }
+
+    public javax.swing.JPasswordField getjPasswordField1() {
+        return jPasswordField1;
+    }
+
+    public javax.swing.JLabel getUsernameLogin() {
+        return usernameLogin;
+    }
+
+    public javax.swing.JLabel getUsernamePassword() {
+        return usernamePassword;
+    }
+
+    public void setRegister(JFrameRegister register) {
+        this.register = register;
+    }
+
+    public void setJMenuItemRecoveryPassword(javax.swing.JMenuItem JMenuItemRecoveryPassword) {
+        this.JMenuItemRecoveryPassword = JMenuItemRecoveryPassword;
+    }
+
+    public void setJMenuItemRegister(javax.swing.JMenuItem JMenuItemRegister) {
+        this.JMenuItemRegister = JMenuItemRegister;
+    }
+
+    public void setJMenuItemSutekEwakuacji(javax.swing.JMenuItem JMenuItemSutekEwakuacji) {
+        this.JMenuItemSutekEwakuacji = JMenuItemSutekEwakuacji;
+    }
+
+    public void setButtonExit(javax.swing.JButton buttonExit) {
+        this.buttonExit = buttonExit;
+    }
+
+    public void setButtonLogin(javax.swing.JButton buttonLogin) {
+        this.buttonLogin = buttonLogin;
+    }
+
+    public void setFieldPasswordLogin(javax.swing.JPasswordField fieldPasswordLogin) {
+        this.fieldPasswordLogin = fieldPasswordLogin;
+    }
+
+    public void setFieldUsernameLogin(javax.swing.JTextField fieldUsernameLogin) {
+        this.fieldUsernameLogin = fieldUsernameLogin;
+    }
+
+    public void setjLabel1(javax.swing.JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public void setjMenu1(javax.swing.JMenu jMenu1) {
+        this.jMenu1 = jMenu1;
+    }
+
+    public void setjMenuBar1(javax.swing.JMenuBar jMenuBar1) {
+        this.jMenuBar1 = jMenuBar1;
+    }
+
+    public void setjPasswordField1(javax.swing.JPasswordField jPasswordField1) {
+        this.jPasswordField1 = jPasswordField1;
+    }
+
+    public void setUsernameLogin(javax.swing.JLabel usernameLogin) {
+        this.usernameLogin = usernameLogin;
+    }
+
+    public void setUsernamePassword(javax.swing.JLabel usernamePassword) {
+        this.usernamePassword = usernamePassword;
+    }
 }

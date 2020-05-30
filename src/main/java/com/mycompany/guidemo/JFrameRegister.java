@@ -218,4 +218,132 @@ public class JFrameRegister extends javax.swing.JFrame {
     private javax.swing.JLabel labelRepeatPassword;
     private javax.swing.JLabel labelUsername;
     // End of variables declaration//GEN-END:variables
+
+    public javax.swing.JButton getJButtonExit() {
+        return JButtonExit;
+    }
+
+    public javax.swing.JButton getJButtonRegister() {
+        return JButtonRegister;
+    }
+
+    public javax.swing.JTextField getFieldMail() {
+        return fieldMail;
+    }
+
+    public javax.swing.JPasswordField getFieldPassword() {
+        return fieldPassword;
+    }
+
+    public javax.swing.JTextField getFieldRepeatMail() {
+        return fieldRepeatMail;
+    }
+
+    public javax.swing.JPasswordField getFieldRepeatPassword() {
+        return fieldRepeatPassword;
+    }
+
+    public javax.swing.JTextField getFieldUsername() {
+        return fieldUsername;
+    }
+
+    public javax.swing.JFormattedTextField getjFormattedTextField1() {
+        return jFormattedTextField1;
+    }
+
+    public javax.swing.JLabel getjLabelUsernameTaken() {
+        return jLabelUsernameTaken;
+    }
+
+    public javax.swing.JMenuBar getjMenuBar1() {
+        return jMenuBar1;
+    }
+
+    public javax.swing.JLabel getLabelBirthDate() {
+        return labelBirthDate;
+    }
+
+    public javax.swing.JLabel getLabelMail() {
+        return labelMail;
+    }
+
+    public javax.swing.JLabel getLabelPassword() {
+        return labelPassword;
+    }
+
+    public javax.swing.JLabel getLabelRepeatMail() {
+        return labelRepeatMail;
+    }
+
+    public javax.swing.JLabel getLabelRepeatPassword() {
+        return labelRepeatPassword;
+    }
+
+    public javax.swing.JLabel getLabelUsername() {
+        return labelUsername;
+    }
+
+    public void setJButtonExit(javax.swing.JButton JButtonExit) {
+        this.JButtonExit = JButtonExit;
+    }
+
+    public void setJButtonRegister(javax.swing.JButton JButtonRegister) {
+        this.JButtonRegister = JButtonRegister;
+    }
+
+    public void setFieldMail(javax.swing.JTextField fieldMail) {
+        this.fieldMail = fieldMail;
+    }
+
+    public void setFieldPassword(javax.swing.JPasswordField fieldPassword) {
+        this.fieldPassword = fieldPassword;
+    }
+
+    public void setFieldRepeatMail(javax.swing.JTextField fieldRepeatMail) {
+        this.fieldRepeatMail = fieldRepeatMail;
+    }
+
+    public void setFieldRepeatPassword(javax.swing.JPasswordField fieldRepeatPassword) {
+        this.fieldRepeatPassword = fieldRepeatPassword;
+    }
+
+    public void setFieldUsername(javax.swing.JTextField fieldUsername) {
+        this.fieldUsername = fieldUsername;
+    }
+
+    public void setjFormattedTextField1(javax.swing.JFormattedTextField jFormattedTextField1) {
+        this.jFormattedTextField1 = jFormattedTextField1;
+    }
+
+    public void setjLabelUsernameTaken(javax.swing.JLabel jLabelUsernameTaken) {
+        this.jLabelUsernameTaken = jLabelUsernameTaken;
+    }
+
+    public void setjMenuBar1(javax.swing.JMenuBar jMenuBar1) {
+        this.jMenuBar1 = jMenuBar1;
+    }
+
+    public void setLabelBirthDate(javax.swing.JLabel labelBirthDate) {
+        this.labelBirthDate = labelBirthDate;
+    }
+
+    public void setLabelMail(javax.swing.JLabel labelMail) {
+        this.labelMail = labelMail;
+    }
+
+    public void setLabelPassword(javax.swing.JLabel labelPassword) {
+        this.labelPassword = labelPassword;
+    }
+
+    public void setLabelRepeatMail(javax.swing.JLabel labelRepeatMail) {
+        this.labelRepeatMail = labelRepeatMail;
+    }
+
+    public void setLabelRepeatPassword(javax.swing.JLabel labelRepeatPassword) {
+        this.labelRepeatPassword = labelRepeatPassword;
+    }
+
+    public void setLabelUsername(javax.swing.JLabel labelUsername) {
+        this.labelUsername = labelUsername;
+    }
 }

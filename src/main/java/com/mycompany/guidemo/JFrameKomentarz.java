@@ -108,4 +108,28 @@ public class JFrameKomentarz extends javax.swing.JFrame {
     private javax.swing.JButton JButtonHesitate;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
+
+    public javax.swing.JButton getJButtonConfirm() {
+        return JButtonConfirm;
+    }
+
+    public javax.swing.JButton getJButtonHesitate() {
+        return JButtonHesitate;
+    }
+
+    public javax.swing.JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setJButtonConfirm(javax.swing.JButton JButtonConfirm) {
+        this.JButtonConfirm = JButtonConfirm;
+    }
+
+    public void setJButtonHesitate(javax.swing.JButton JButtonHesitate) {
+        this.JButtonHesitate = JButtonHesitate;
+    }
+
+    public void setjLabel1(javax.swing.JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
 }

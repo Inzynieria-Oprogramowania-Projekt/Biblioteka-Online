@@ -162,4 +162,76 @@ public class JFrameSearch extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+
+    public javax.swing.JButton getJButtonSearch() {
+        return JButtonSearch;
+    }
+
+    public javax.swing.JTextField getJTextFieldSearch() {
+        return JTextFieldSearch;
+    }
+
+    public javax.swing.JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public javax.swing.JMenu getjMenu1() {
+        return jMenu1;
+    }
+
+    public javax.swing.JMenuBar getjMenuBar1() {
+        return jMenuBar1;
+    }
+
+    public javax.swing.JMenuItem getjMenuItem1() {
+        return jMenuItem1;
+    }
+
+    public javax.swing.JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public javax.swing.JSeparator getjSeparator1() {
+        return jSeparator1;
+    }
+
+    public javax.swing.JTable getjTable1() {
+        return jTable1;
+    }
+
+    public void setJButtonSearch(javax.swing.JButton JButtonSearch) {
+        this.JButtonSearch = JButtonSearch;
+    }
+
+    public void setJTextFieldSearch(javax.swing.JTextField JTextFieldSearch) {
+        this.JTextFieldSearch = JTextFieldSearch;
+    }
+
+    public void setjLabel1(javax.swing.JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public void setjMenu1(javax.swing.JMenu jMenu1) {
+        this.jMenu1 = jMenu1;
+    }
+
+    public void setjMenuBar1(javax.swing.JMenuBar jMenuBar1) {
+        this.jMenuBar1 = jMenuBar1;
+    }
+
+    public void setjMenuItem1(javax.swing.JMenuItem jMenuItem1) {
+        this.jMenuItem1 = jMenuItem1;
+    }
+
+    public void setjScrollPane1(javax.swing.JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public void setjSeparator1(javax.swing.JSeparator jSeparator1) {
+        this.jSeparator1 = jSeparator1;
+    }
+
+    public void setjTable1(javax.swing.JTable jTable1) {
+        this.jTable1 = jTable1;
+    }
 }
