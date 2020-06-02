@@ -7,6 +7,7 @@ public class JFrameSearch extends javax.swing.JFrame {
 
     public JFrameSearch() {
         initComponents();
+        jLabel1.setVisible(false);
         S=this;
     }
 
@@ -29,7 +30,6 @@ public class JFrameSearch extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Biblioteka Online");
 
-        JTextFieldSearch.setText("Wyszukaj");
         JTextFieldSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTextFieldSearchActionPerformed(evt);

@@ -51,5 +51,8 @@ public class Main {
 
         JFrameBookPage b=new JFrameBookPage();
         b.setLocationRelativeTo(null);
+
+        JFrameReading r=new JFrameReading();
+        r.setLocationRelativeTo(null);
     }
 }

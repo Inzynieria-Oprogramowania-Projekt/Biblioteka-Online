@@ -286,7 +286,7 @@ public class JFrameAccountPage extends javax.swing.JFrame {
         if(!jList1.isSelectionEmpty()) {
             Book.S=new Book(owned.get(4*jList1.getSelectedIndex()), owned.get(4*jList1.getSelectedIndex()+1), owned.get(4*jList1.getSelectedIndex()+2), Float.parseFloat(owned.get(4*jList1.getSelectedIndex()+3)));
             JFrameAccountPage.S.setVisible(false);
-            JFrame.S.setVisible(true);
+            JFrameReading.S.setVisible(true);
         }
     }
 
