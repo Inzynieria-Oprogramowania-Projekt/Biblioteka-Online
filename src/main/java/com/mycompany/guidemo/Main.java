@@ -12,7 +12,7 @@ package com.mycompany.guidemo;
 public class Main {
     public static void main(String[] args)
     {
-        ButtonClumn bclu = new ButtonClumn();
+        
         JFrameLogin login = new JFrameLogin();
         login.setLocationRelativeTo(null);
         JFrameLogin.S.setVisible(true);
