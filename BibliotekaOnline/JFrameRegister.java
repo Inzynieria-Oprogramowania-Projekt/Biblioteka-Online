@@ -158,15 +158,19 @@ public class JFrameRegister extends JFrame {
         String mail=fieldMail.getText();
         boolean at=false;
         boolean dot=false;
+        boolean lbd=false;
         boolean check=true;
 
         for(int i=0;i<mail.length();i++){
             if(mail.charAt(i)=='.' && at) dot=true;
+            if(mail.charAt(i)!=' ' && at && !dot) lbd=true;
+            if(mail.charAt(i)==' ') check=false;
             if(mail.charAt(i)=='@') at=true;
         }
 
         if(!at) check=false;
         if(!dot) check=false;
+        if(!lbd) check=false;
 
         int reg=ServerConnection.S.Register(fieldUsername.getText(),fieldMail.getText(),new String(fieldPassword.getPassword()),jFormattedTextField1.getText());
 
