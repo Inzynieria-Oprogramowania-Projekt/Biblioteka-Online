@@ -1,7 +1,7 @@
 public class User {
 
     private String username;
-    private boolean is_emp
+    private boolean is_emp;
 
     public User(String username, boolean is_emp){
         this.username=username;

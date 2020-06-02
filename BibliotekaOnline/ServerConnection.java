@@ -1,3 +1,4 @@
+import javax.xml.transform.Result;
 import java.security.Policy;
 import java.sql.*;
 import java.util.ArrayList;
@@ -7,10 +8,12 @@ public class ServerConnection {
     private String url;
     private Connection connection;
     private Statement statement;
+    public static ServerConnection S;
 
     public ServerConnection(String url) {
         Policy.setPolicy(new DerbyPolicy());
         this.url = url;
+        S=this;
     }
 
     public boolean Connect() {
@@ -110,8 +113,10 @@ public class ServerConnection {
         try {
             statement = connection.createStatement();
             ResultSet rs = statement.executeQuery("SELECT user_id FROM Users WHERE username='" + username + "'");
+            rs.next();
             int user_id = rs.getInt("user_id");
             rs = statement.executeQuery("SELECT book_id FROM Books WHERE title='" + book_title + "'");
+            rs.next();
             int book_id = rs.getInt("book_id");
             statement.execute("INSERT INTO Reviews (book_id,user_id,rating) VALUES ('" + book_id + "','" + user_id + "','" + rating + "')");
             return true;
@@ -125,14 +130,25 @@ public class ServerConnection {
         try {
             statement = connection.createStatement();
             ResultSet rs = statement.executeQuery("SELECT user_id FROM Users WHERE username='" + username + "'");
+            rs.next();
             int user_id = rs.getInt("user_id");
             rs = statement.executeQuery("SELECT book_id FROM Books WHERE title='" + book_title + "'");
+            rs.next();
             int book_id = rs.getInt("book_id");
-            statement.execute("INSERT INTO Reviews (book_id,user_id,rating,comment) VALUES ('" + book_id + "','" + user_id + "','" + rating + "','" + comment + "')");
+            statement.execute("INSERT INTO Reviews (book_id,user_id,rating,comment) VALUES (" + book_id + "," + user_id + "," + rating + ",'" + comment + "')");
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return false;
+    }
+
+    public boolean AddBook(String title, String author_name, String author_surname, String description, float price){
+        try{
+            statement = connection.createStatement();
+            statement.execute("INSERT INTO Books (title, author_name, author_surname, description, price) VALUES ('"+title+"','"+author_name+"','"+author_surname+"','"+description+"',"+price+")");
+            return true;
+        } catch(SQLException e){e.printStackTrace();}
         return false;
     }
 
@@ -186,7 +202,10 @@ public class ServerConnection {
     public float GetOverallRating(String book_title) {
         try {
             statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery("SELECT rating FROM Reviews WHERE title='" + book_title + "'");
+            ResultSet rs1=statement.executeQuery("SELECT book_id FROM Books WHERE title='"+book_title+"'");
+            rs1.next();
+            int id=rs1.getInt("book_id");
+            ResultSet rs = statement.executeQuery("SELECT rating FROM Reviews WHERE book_id=" + id + "");
             int sum = 0, count = 0;
             while (rs.next()) {
                 sum += rs.getInt("rating");
@@ -200,31 +219,49 @@ public class ServerConnection {
         return 0f;
     }
 
-    public ArrayList<String> GetNewestReviews(String book_title, int count) {
+    public float GetUsersBalance(String username){
+        float balance=0;
+        try{
+            statement=connection.createStatement();
+            ResultSet rs=statement.executeQuery("SELECT balance FROM Users WHERE username='"+username+"'");
+            rs.next();
+            balance=rs.getFloat("balance");
+        } catch(SQLException e){e.printStackTrace();}
+        return balance;
+    }
+
+    public ArrayList<String> GetLatestReviews(String book_title, int count) {
         ArrayList<String> al = new ArrayList<>();
+        ArrayList<String> ans=new ArrayList<>();
+        int rlcount=count;
         try {
-            connection.createStatement();
-            ResultSet rs = statement.executeQuery("SELECT rating, comment FROM Rewievs WHERE title='" + book_title + "'");
-            if (rs.last()) {
+            statement=connection.createStatement();
+            ResultSet rs1=statement.executeQuery("SELECT book_id FROM Books WHERE title='"+book_title+"'");
+            rs1.next();
+            int id=rs1.getInt("book_id");
+            ResultSet rs = statement.executeQuery("SELECT rating, comment, user_id FROM Reviews WHERE book_id=" + id + "");
+            while (rs.next()) {
                 al.add(Integer.toString(rs.getInt("rating")));
                 al.add(rs.getString("comment"));
             }
-            for (int i = 0; i < count - 1; i++) {
-                if (rs.previous()) {
-                    al.add(Integer.toString(rs.getInt("rating")));
-                    al.add(rs.getString("comment"));
-                }
+
+            if(rlcount>al.size()/2) rlcount=al.size()/2;
+
+            for (int i = al.size()-1; i >= al.size()-(rlcount*2); i-=2) {
+                ans.add(al.get(i-1));
+                ans.add(al.get(i));
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return al;
+        return ans;
     }
 
     public boolean IsEmployee(String username) {
         boolean emp = false;
         try {
-            connection.createStatement();
+            statement=connection.createStatement();
             ResultSet rs = statement.executeQuery("SELECT is_employee FROM Users WHERE username='" + username + "'");
             emp = rs.getBoolean("is_employee");
         } catch (SQLException e) {
@@ -235,7 +272,7 @@ public class ServerConnection {
 
     public void SetAsEmployee(String username) {
         try {
-            connection.createStatement();
+            statement=connection.createStatement();
             statement.execute("UPDATE Users SET is_employee=true WHERE username='" + username + "'");
         } catch (SQLException e) {
             e.printStackTrace();
@@ -245,7 +282,7 @@ public class ServerConnection {
     public float GetBookPrice(String book_title) {
         float price = 0;
         try {
-            connection.createStatement();
+            statement=connection.createStatement();
             ResultSet rs = statement.executeQuery("SELECT price FROM Books WHERE title='" + book_title + "'");
             price = rs.getFloat("price");
         } catch (SQLException e) {
@@ -256,8 +293,8 @@ public class ServerConnection {
 
     public void ChangeUsersBalance(String username, float amount) {
         try {
-            connection.createStatement();
-            statement.execute("UPDATE Users SET balance=balance-" + amount + " WHERE username='" + username + "'");
+            statement=connection.createStatement();
+            statement.execute("UPDATE Users SET balance=balance+" + amount + " WHERE username='" + username + "'");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -265,17 +302,37 @@ public class ServerConnection {
 
     public void ChangePassword(String username, String password){
         try{
-            connection.createStatement();
+            statement=connection.createStatement();
             statement.execute("UPDATE Users SET password='"+password+"' WHERE username='"+username+"'");
+        } catch(SQLException e){e.printStackTrace();}
+    }
+
+    public void BuyBook(String username, String title){
+        try{
+            statement=connection.createStatement();
+            ResultSet rs1=statement.executeQuery("SELECT book_id, price FROM Books WHERE title='"+title+"'");
+            rs1.next();
+            int book_id=rs1.getInt("book_id");
+            float price=rs1.getFloat("price");
+            connection.createStatement();
+            ResultSet rs2=statement.executeQuery("SELECT user_id FROM Users WHERE username='"+username+"'");
+            rs2.next();
+            int user_id=rs2.getInt("user_id");
+            connection.createStatement();
+            statement.execute("INSERT INTO Orders (user_id, book_id) VALUES ("+user_id+","+book_id+")");
+            ChangeUsersBalance(username,price*(-1));
         } catch(SQLException e){e.printStackTrace();}
     }
 
     public ArrayList<String> GetLatestBooks(int count) {
         ArrayList<String> al = new ArrayList<>();
+        ArrayList<String> ans=new ArrayList<>();
+        int rlcount=count;
         try {
-            connection.createStatement();
+            statement=connection.createStatement();
             ResultSet rs = statement.executeQuery("SELECT title,author_name,author_surname,description,price FROM Books");
-            if (rs.last()) {
+
+            while(rs.next()){
                 al.add(rs.getString("title"));
                 al.add(rs.getString("author_name"));
                 al.add(rs.getString("author_surname"));
@@ -283,25 +340,25 @@ public class ServerConnection {
                 al.add(Float.toString(rs.getFloat("price")));
             }
 
-            for (int i = 0; i < count - 1; i++) {
-                if (rs.previous()) {
-                    al.add(rs.getString("title"));
-                    al.add(rs.getString("author_name"));
-                    al.add(rs.getString("author_surname"));
-                    al.add(rs.getString("description"));
-                    al.add(Float.toString(rs.getFloat("price")));
-                }
+            if(rlcount>al.size()/5) rlcount=al.size()/5;
+
+            for (int i = al.size()-1; i >= al.size()-(rlcount*5); i-=5) {
+                ans.add(al.get(i-4));
+                ans.add(al.get(i-3));
+                ans.add(al.get(i-2));
+                ans.add(al.get(i-1));
+                ans.add(al.get(i));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return al;
+        return ans;
     }
 
     public ArrayList<String> SearchByTitle(String title){
         ArrayList<String> res=new ArrayList<>();
         try {
-            connection.createStatement();
+            statement=connection.createStatement();
             ResultSet rs = statement.executeQuery("SELECT title,author_name,author_surname,price FROM Books WHERE title='"+title+"'");
 
             while(rs.next()){
@@ -317,7 +374,7 @@ public class ServerConnection {
     public ArrayList<String> SearchByAuthorsName(String name){
         ArrayList<String> res=new ArrayList<>();
         try {
-            connection.createStatement();
+            statement=connection.createStatement();
             ResultSet rs = statement.executeQuery("SELECT title,author_name,author_surname,price FROM Books WHERE author_name='"+name+"'");
 
             while(rs.next()){
@@ -333,7 +390,7 @@ public class ServerConnection {
     public ArrayList<String> SearchByAuthorsSurname(String surname){
         ArrayList<String> res=new ArrayList<>();
         try {
-            connection.createStatement();
+            statement=connection.createStatement();
             ResultSet rs = statement.executeQuery("SELECT title,author_name,author_surname,price FROM Books WHERE author_surname='"+surname+"'");
 
             while(rs.next()){
@@ -346,6 +403,29 @@ public class ServerConnection {
         return res;
     }
 
+    public ArrayList<String> GetUsersBooks(String username){
+        ArrayList<String> books=new ArrayList<>();
+        try{
+            statement = connection.createStatement();
+            ResultSet rs1=statement.executeQuery("SELECT user_id FROM Users WHERE username='"+username+"'");
+            rs1.next();
+            int userid=rs1.getInt("user_id");
+            ResultSet rs2=statement.executeQuery("SELECT book_id FROM Orders WHERE user_id="+userid+"");
+            ArrayList<Integer> bkid=new ArrayList<>();
+
+            while(rs2.next()) bkid.add(rs2.getInt("book_id"));
+
+            for(int i=0;i<bkid.size();i++){
+                ResultSet rs3=statement.executeQuery("SELECT title, author_name, author_surname FROM Books WHERE book_id="+bkid.get(i)+"");
+                rs3.next();
+                books.add(rs3.getString("title"));
+                books.add(rs3.getString("author_name"));
+                books.add(rs3.getString("author_surname"));
+            }
+        } catch(SQLException e){e.printStackTrace();}
+        return books;
+    }
+
     public ArrayList<String> GetUsers() {
         ArrayList<String> res = new ArrayList<>();
         try {
@@ -356,6 +436,7 @@ public class ServerConnection {
                         rs.getString("username") + " " +
                         rs.getString("password") + " " +
                         rs.getString("email") + " " +
+                        rs.getString("birth_date") + " " +
                         rs.getBoolean("is_employee"
                         ));
         } catch (SQLException e) {
