@@ -100,13 +100,15 @@ public class ServerConnection {
         }
     }
 
-    public void AddUser(String username, String email, String password, String birth_date, float balance, boolean is_worker) {
+    public boolean AddUser(String username, String email, String password, String birth_date, float balance, boolean is_worker) {
         try {
             statement = connection.createStatement();
             statement.execute("INSERT INTO Users (username,email,password,birth_date,balance,is_employee) VALUES ('" + username + "','" + email + "','" + password +"','"+birth_date+"'," + balance + ",'" + is_worker + "')");
+            return true;
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return false;
     }
 
     public boolean AddReview(String book_title, String username, int rating) {
@@ -156,8 +158,9 @@ public class ServerConnection {
         if (LookForEmail(email) && LookForUsername(username)) return 1;
         if (LookForUsername(username)) return 2;
         if (LookForEmail(email)) return 3;
-        AddUser(username, email, password, birth_date, 0f, false);
+        if(AddUser(username, email, password, birth_date, 0f, false))
         return 0;
+        else return 4;
     }
 
     public boolean LogIn(String username, String password) {
@@ -263,6 +266,7 @@ public class ServerConnection {
         try {
             statement=connection.createStatement();
             ResultSet rs = statement.executeQuery("SELECT is_employee FROM Users WHERE username='" + username + "'");
+            rs.next();
             emp = rs.getBoolean("is_employee");
         } catch (SQLException e) {
             e.printStackTrace();

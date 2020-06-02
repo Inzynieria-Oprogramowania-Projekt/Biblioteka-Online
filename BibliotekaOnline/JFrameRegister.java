@@ -148,7 +148,6 @@ public class JFrameRegister extends JFrame {
     private void JButtonExitActionPerformed(java.awt.event.ActionEvent evt) {
         JFrameRegister.S.setVisible(false);
         JFrameLogin.S.setVisible(true);
-
     }
 
     private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -156,8 +155,64 @@ public class JFrameRegister extends JFrame {
     }
 
     private void JButtonRegisterActionPerformed(java.awt.event.ActionEvent evt) {
-        JFrameRegister.S.setVisible(false);
-        JFrameLogin.S.setVisible(true);
+        String mail=fieldMail.getText();
+        boolean at=false;
+        boolean dot=false;
+        boolean check=true;
+
+        for(int i=0;i<mail.length();i++){
+            if(mail.charAt(i)=='.' && !at) check=false;
+            else if(mail.charAt(i)=='.') dot=true;
+            if(mail.charAt(i)=='@') at=true;
+        }
+
+        if(!at) check=false;
+        if(!dot) check=false;
+
+        int reg=ServerConnection.S.Register(fieldUsername.getText(),fieldMail.getText(),new String(fieldPassword.getPassword()),jFormattedTextField1.getText());
+
+        if(!check){
+            jLabelUsernameTaken.setText("Niepoprawny format adresu email!");
+            jLabelUsernameTaken.setVisible(true);
+        }
+        else if(!new String(fieldPassword.getPassword()).equals(new String(fieldRepeatPassword.getPassword()))) {
+            jLabelUsernameTaken.setText("Hasło nie zostało powtórzone poprawnie!");
+            jLabelUsernameTaken.setVisible(true);
+        }
+        else if(!fieldMail.getText().equals(fieldRepeatMail.getText())){
+            jLabelUsernameTaken.setText("Adres email nie został powtórzony poprawnie!");
+            jLabelUsernameTaken.setVisible(true);
+        }
+        else if(reg==1)
+        {
+            jLabelUsernameTaken.setText("Nazwa użytkownika jest zajęta! Użytkownik o podanym adresie email już istnieje!");
+            jLabelUsernameTaken.setVisible(true);
+        }
+        else if(reg==2)
+        {
+            jLabelUsernameTaken.setText("Nazwa użytkownika jest zajęta!");
+            jLabelUsernameTaken.setVisible(true);
+        }
+        else if(reg==3)
+        {
+            jLabelUsernameTaken.setText("Użytkownik o podanym adresie email już istnieje!");
+            jLabelUsernameTaken.setVisible(true);
+        }
+        else if(reg==4)
+        {
+            jLabelUsernameTaken.setText("Niepoprawny format daty!");
+            jLabelUsernameTaken.setVisible(true);
+        }
+        else
+        {
+            JFrameRegister.S.setVisible(false);
+            JFrameLogin.S.setVisible(true);
+            jLabelUsernameTaken.setVisible(false);
+            fieldUsername.setText(null);
+            fieldMail.setText(null);
+            fieldPassword.setText(null);
+            jFormattedTextField1.setText(null);
+        }
     }
 
     private javax.swing.JButton JButtonExit;

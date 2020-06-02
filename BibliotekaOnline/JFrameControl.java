@@ -7,6 +7,7 @@ public class JFrameControl {
     public User user;
     public Book currentBook;
 
+    /*
     public void PrzyciskZaloguj(){
         if(ServerConnection.S.LogIn(fieldUsernameLogin.getText(), fieldPasswordLogin.getPassword()))
         {
@@ -101,4 +102,5 @@ public class JFrameControl {
     public void DodajKsiazke(){
         ServerConnection.S.AddBook(potrzebne stringi z pól);
     }
+    */
 }

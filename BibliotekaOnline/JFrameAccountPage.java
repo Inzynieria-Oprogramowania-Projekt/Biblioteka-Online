@@ -38,7 +38,7 @@ public class JFrameAccountPage extends JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Biblioteka Online");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rsz_userimage.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("Resources/rsz_userimage.png"))); // NOI18N
         jLabel1.setText("Tutaj będzie obrazek");
 
         jLabel2.setText("Administrator");
@@ -267,7 +267,6 @@ public class JFrameAccountPage extends JFrame {
     private javax.swing.JPasswordField jPasswordField3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    // End of variables declaration
 
     public javax.swing.JButton getJButtonCart() {
         return JButtonCart;

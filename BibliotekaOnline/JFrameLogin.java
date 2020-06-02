@@ -58,7 +58,7 @@ public class JFrameLogin extends JFrame {
             }
         });
 
-        jLabel1.setText("LoginMistaken");
+        jLabel1.setText("Podano nieprawidłową nazwę użytkownika lub hasło!");
 
         jMenu1.setText("File");
 
@@ -135,9 +135,20 @@ public class JFrameLogin extends JFrame {
     }
 
     private void buttonLoginActionPerformed(java.awt.event.ActionEvent evt) {
-        JFrameLogin.S.setVisible(false);
-        JFrameSearch.S.setVisible(true);
+        if(ServerConnection.S.LogIn(fieldUsernameLogin.getText(), new String(fieldPasswordLogin.getPassword())))
+        {
+            jLabel1.setVisible(false);
+            User.S=new User(fieldUsernameLogin.getText(),ServerConnection.S.IsEmployee(fieldUsernameLogin.getText()));
+            fieldUsernameLogin.setText(null);
 
+            JFrameLogin.S.setVisible(false);
+            JFrameSearch.S.setVisible(true);
+        }
+        else{
+            jLabel1.setVisible(true);
+        }
+        fieldUsernameLogin.setText(null);
+        fieldPasswordLogin.setText(null);
     }
 
     private void JMenuItemRegisterActionPerformed(java.awt.event.ActionEvent evt) {
