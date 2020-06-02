@@ -63,6 +63,11 @@ public class JFrameRegister extends javax.swing.JFrame {
 
         JButtonRegister.setText("Zarejestruj");
         JButtonRegister.setActionCommand("JButtonRegister");
+        JButtonRegister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JButtonRegisterActionPerformed(evt);
+            }
+        });
 
         JButtonExit.setText("Cofnij");
         JButtonExit.setActionCommand("JButtonUndo");
@@ -166,6 +171,12 @@ public class JFrameRegister extends javax.swing.JFrame {
     private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jFormattedTextField1ActionPerformed
+
+    private void JButtonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButtonRegisterActionPerformed
+        // TODO add your handling code here:
+        JFrameRegister.S.setVisible(false);
+        JFrameLogin.S.setVisible(true);
+    }//GEN-LAST:event_JButtonRegisterActionPerformed
 
     /**
      * @param args the command line arguments

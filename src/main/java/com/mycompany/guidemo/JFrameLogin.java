@@ -162,7 +162,7 @@ public class JFrameLogin extends javax.swing.JFrame {
 
     private void JMenuItemRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMenuItemRegisterActionPerformed
         // TODO add your handling code here:
-        
+        JFrameLogin.S.setVisible(false);
         JFrameRegister.S.setVisible(true);
         
     }//GEN-LAST:event_JMenuItemRegisterActionPerformed

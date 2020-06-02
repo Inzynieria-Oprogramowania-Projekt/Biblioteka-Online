@@ -156,6 +156,9 @@
         <Property name="text" type="java.lang.String" value="Zarejestruj"/>
         <Property name="actionCommand" type="java.lang.String" value="JButtonRegister"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JButtonRegisterActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="JButtonExit">
       <Properties>
