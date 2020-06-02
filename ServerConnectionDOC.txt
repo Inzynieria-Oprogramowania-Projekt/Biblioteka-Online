@@ -1,0 +1,34 @@
+boolean Connect() - połączenie się z bazą danych (używać, jeśli nie jest używane CreateEmpty())
+
+boolean Disconnect() - dać na zamknięcie programu, bo inaczej indeksy się sypią
+
+void CreateEmpty() - używać tylko, kiedy baza nie istnieje! (bo nie ma tam DROP IF EXISTS)
+
+void AddUser() - dodaje użytkownika, wstępnie jest public, ale jak nie ma potrzeby to używać Register()
+
+boolean AddReview() - dodawanie recenzji do książki, są dwie wersje, jedna z komentarzem jedna bez, zwróci false przy porażce (i błędy)
+
+int Register() - dodaje nowego użytkownika, jeśli login i email nie są zajęte (zwróci 1, gdy oba są zajęte, 2 jeśli zajęty jest login, 3 jeśli zajęty jest email i 0 jeśli rejestracja się powiedzie)
+
+boolean LogIn() - sprawdza, czy podany zestaw (login i hasło) istnieje w bazie
+
+boolean LookForUsername() - szuka loginu w bazie
+boolean LookForEmail()
+boolean LookForPassword()
+
+float GetOverallRating() - zwraca średnią ocenę podanej książki
+
+ArrayList<String> GetNewestReviews() - zwraca podaną liczbę najnowszych recenzji podanej książki
+
+boolean IsEmployee() - sprawdza, czy podany użytkownik jest pracownikiem (może dodawać książki itd.)
+
+void SetAsEmployee() - ustawia status na pracownika
+
+float GetBookPrice() - zwraca cenę podanej książki
+
+ArrayList<String> GetLatestBooks() - zwraca podaną liczbę ostatnio dodanych książek
+
+ArrayList<String> GetUsers() - zwraca pełną listę użytkowników 
+
+
+
