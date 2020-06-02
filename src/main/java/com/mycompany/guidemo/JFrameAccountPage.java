@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 
 /**
@@ -53,8 +54,9 @@ public class JFrameAccountPage extends javax.swing.JFrame {
         jPasswordField3 = new javax.swing.JPasswordField();
         JButtonChangePassword = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jList1 = new javax.swing.JList<>();
         jLabel4 = new javax.swing.JLabel();
+        JButtonRead = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -192,35 +194,22 @@ public class JFrameAccountPage extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Ja", "To Ja", "Wybierz"},
-                {"Ty", "To Ty", "Wybierz"},
-                {"Mag ", "Ognia", "Wybierz"},
-                {"Rzuca", "Kulą", null}
-            },
-            new String [] {
-                "Tytuł", "Autor", ""
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane2.setViewportView(jTable1);
+        jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane2.setViewportView(jList1);
 
         jLabel4.setText("Lista posiadanych książek");
+
+        JButtonRead.setText("Czytaj");
+        JButtonRead.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JButtonReadActionPerformed(evt);
+            }
+        });
 
         jMenu1.setText("File");
 
@@ -246,10 +235,15 @@ public class JFrameAccountPage extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addComponent(JButtonRead)))
                 .addContainerGap(11, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -262,7 +256,10 @@ public class JFrameAccountPage extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(JButtonRead)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -289,6 +286,13 @@ public class JFrameAccountPage extends javax.swing.JFrame {
         JFrameAccountPage.S.setVisible(false);
     }//GEN-LAST:event_JButtonLogoutActionPerformed
 
+    private void JButtonReadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButtonReadActionPerformed
+
+           JOptionPane.showMessageDialog(JButtonRead,"Zabij się");
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JButtonReadActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -299,6 +303,7 @@ public class JFrameAccountPage extends javax.swing.JFrame {
     private javax.swing.JButton JButtonChangePassword;
     private javax.swing.JButton JButtonCharge;
     private javax.swing.JButton JButtonLogout;
+    private javax.swing.JButton JButtonRead;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -308,6 +313,7 @@ public class JFrameAccountPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JList<String> jList1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
@@ -317,7 +323,6 @@ public class JFrameAccountPage extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JPasswordField jPasswordField3;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 
     public javax.swing.JButton getJButtonCart() {
@@ -408,10 +413,6 @@ public class JFrameAccountPage extends javax.swing.JFrame {
         return jScrollPane2;
     }
 
-    public javax.swing.JTable getjTable1() {
-        return jTable1;
-    }
-
     public void setJButtonCart(javax.swing.JButton JButtonCart) {
         this.JButtonCart = JButtonCart;
     }
@@ -500,7 +501,4 @@ public class JFrameAccountPage extends javax.swing.JFrame {
         this.jScrollPane2 = jScrollPane2;
     }
 
-    public void setjTable1(javax.swing.JTable jTable1) {
-        this.jTable1 = jTable1;
-    }
 }

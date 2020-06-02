@@ -3,11 +3,13 @@ package com.mycompany.guidemo;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.accessibility.AccessibleContext;
 
 import javax.swing.DefaultCellEditor;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JRootPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -16,9 +18,11 @@ import javax.swing.table.TableCellRenderer;
 //OUR MAIN CLASS
 public class ButtonClumn extends JFrame {
 
+
+
   public ButtonClumn(){
   //FORM TITLE
-  super("Button Column Example");
+  super("Search Result");
 
   //DATA FOR OUR TABLE
   Object[][] data=
@@ -33,7 +37,6 @@ public class ButtonClumn extends JFrame {
   String columnHeaders[]={"Autor","Tytuł",""};
   //CREATE OUR TABLE AND SET HEADER
   JTable table=new JTable(data,columnHeaders);
-
   //SET CUSTOM RENDERER TO TEAMS COLUMN
   table.getColumnModel().getColumn(2).setCellRenderer(new ButtonRenderer());;
 
@@ -46,7 +49,21 @@ public class ButtonClumn extends JFrame {
   setSize(450,100);
 
   setDefaultCloseOperation(EXIT_ON_CLOSE);
+  
   }
+
+
+    public JRootPane getRootPane() {
+        return rootPane;
+    }
+
+    public boolean isRootPaneCheckingEnabled() {
+        return rootPaneCheckingEnabled;
+    }
+
+    public AccessibleContext getAccessibleContext() {
+        return accessibleContext;
+    }
 
   public static void main(String[] args) {
     ButtonClumn bc=new ButtonClumn();
@@ -97,6 +114,10 @@ class ButtonEditor extends DefaultCellEditor
 
         fireEditingStopped();
       }
+
+        private void fireEditingStopped() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
     });
   }
 
