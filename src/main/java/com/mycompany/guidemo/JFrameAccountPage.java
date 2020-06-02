@@ -73,6 +73,11 @@ public class JFrameAccountPage extends javax.swing.JFrame {
 
         JButtonLogout.setText("Wyloguj");
         JButtonLogout.setActionCommand("JButtonLogout");
+        JButtonLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JButtonLogoutActionPerformed(evt);
+            }
+        });
 
         JButtonCharge.setText("Doładuj");
         JButtonCharge.setActionCommand("JButtonCharge");
@@ -133,13 +138,7 @@ public class JFrameAccountPage extends javax.swing.JFrame {
 
         jLabel10.setText("Podaj nowe hasło");
 
-        jPasswordField1.setText("jPasswordField1");
-
-        jPasswordField2.setText("jPasswordField2");
-
         jLabel11.setText("Powtórz nowe hasło");
-
-        jPasswordField3.setText("jPasswordField3");
 
         JButtonChangePassword.setText("Zmień Hasło");
         JButtonChangePassword.setActionCommand("JButtonChangePassword");
@@ -155,15 +154,15 @@ public class JFrameAccountPage extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel9)
                             .addComponent(jLabel10)
-                            .addComponent(jLabel8)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel8))
                         .addContainerGap(84, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel11)
-                            .addComponent(jPasswordField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JButtonChangePassword))
+                            .addComponent(JButtonChangePassword)
+                            .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+                            .addComponent(jPasswordField2)
+                            .addComponent(jPasswordField3))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -222,7 +221,7 @@ public class JFrameAccountPage extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(46, Short.MAX_VALUE)
+                .addContainerGap(62, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -230,7 +229,7 @@ public class JFrameAccountPage extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -258,6 +257,14 @@ public class JFrameAccountPage extends javax.swing.JFrame {
         JFrameSearch.S.setVisible(true);
         JFrameAccountPage.S.setVisible(false);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void JButtonLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButtonLogoutActionPerformed
+        
+        // TODO add your handling code here:
+        
+        JFrameLogin.S.setVisible(true);
+        JFrameAccountPage.S.setVisible(false);
+    }//GEN-LAST:event_JButtonLogoutActionPerformed
 
     /**
      * @param args the command line arguments

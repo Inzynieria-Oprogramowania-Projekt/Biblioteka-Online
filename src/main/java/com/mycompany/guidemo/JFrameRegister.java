@@ -164,7 +164,8 @@ public class JFrameRegister extends javax.swing.JFrame {
 
     private void JButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButtonExitActionPerformed
         // TODO add your handling code here:
-        dispose();
+        JFrameRegister.S.setVisible(false);
+        JFrameLogin.S.setVisible(true);
         
     }//GEN-LAST:event_JButtonExitActionPerformed
 

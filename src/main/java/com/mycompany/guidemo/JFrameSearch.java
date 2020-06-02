@@ -29,6 +29,7 @@ public class JFrameSearch extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         JTextFieldSearch = new javax.swing.JTextField();
         JButtonSearch = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
@@ -69,8 +70,15 @@ public class JFrameSearch extends javax.swing.JFrame {
 
         jLabel1.setText("Brak wyników wyszukiwania");
 
+        buttonGroup1.add(jRadioButton1);
         jRadioButton1.setText("Wyszukuj po tytule");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
 
+        buttonGroup1.add(jRadioButton2);
         jRadioButton2.setText("Wyszukuj po autorze");
 
         jMenu1.setText("File");
@@ -154,6 +162,11 @@ public class JFrameSearch extends javax.swing.JFrame {
         // TODO ad your handling code here:
     }//GEN-LAST:event_jMenu1ActionPerformed
 
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
     
     /**
      * @param args the command line arguments
@@ -194,6 +207,7 @@ public class JFrameSearch extends javax.swing.JFrame {
     private javax.swing.JButton JButtonSearch;
     private javax.swing.JMenuItem JMenuItemAccPage;
     private javax.swing.JTextField JTextFieldSearch;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
