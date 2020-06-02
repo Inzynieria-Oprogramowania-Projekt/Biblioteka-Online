@@ -15,12 +15,14 @@ import javax.swing.JOptionPane;
  */
 public class JFrameLogin extends javax.swing.JFrame {
 
+       public static JFrameLogin S;
     /**
      * Creates new form Login
      */
-    private JFrameRegister register = new JFrameRegister();
+    
     public JFrameLogin() {
         initComponents();
+        S=this;
     }
 
     /**
@@ -49,6 +51,7 @@ public class JFrameLogin extends javax.swing.JFrame {
         jPasswordField1.setText("jPasswordField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Biblioteka Online");
 
         usernameLogin.setText("Nazwa Użytkownika");
 
@@ -152,14 +155,15 @@ public class JFrameLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_JMenuItemSutekEwakuacjiActionPerformed
 
     private void buttonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLoginActionPerformed
-        // TODO add your handling code here:
-        
+        JFrameLogin.S.setVisible(false);
+        JFrameSearch.S.setVisible(true);
         
     }//GEN-LAST:event_buttonLoginActionPerformed
 
     private void JMenuItemRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMenuItemRegisterActionPerformed
         // TODO add your handling code here:
-        register.setVisible(true);
+        
+        JFrameRegister.S.setVisible(true);
         
     }//GEN-LAST:event_JMenuItemRegisterActionPerformed
 
@@ -170,40 +174,7 @@ public class JFrameLogin extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrameLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrameLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrameLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrameLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-            new JFrameLogin().setVisible(true);
-  
-           
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem JMenuItemRecoveryPassword;
@@ -223,10 +194,6 @@ public class JFrameLogin extends javax.swing.JFrame {
 
     public javax.swing.JMenuItem getJMenuItemRecoveryPassword() {
         return JMenuItemRecoveryPassword;
-    }
-
-    public JFrameRegister getRegister() {
-        return register;
     }
 
     public javax.swing.JMenuItem getJMenuItemRegister() {
@@ -277,9 +244,6 @@ public class JFrameLogin extends javax.swing.JFrame {
         return usernamePassword;
     }
 
-    public void setRegister(JFrameRegister register) {
-        this.register = register;
-    }
 
     public void setJMenuItemRecoveryPassword(javax.swing.JMenuItem JMenuItemRecoveryPassword) {
         this.JMenuItemRecoveryPassword = JMenuItemRecoveryPassword;

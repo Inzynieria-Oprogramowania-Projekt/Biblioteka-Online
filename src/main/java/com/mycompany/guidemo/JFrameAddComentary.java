@@ -11,11 +11,13 @@ package com.mycompany.guidemo;
  */
 public class JFrameAddComentary extends javax.swing.JFrame {
 
+    public static JFrameAddComentary S;
     /**
      * Creates new form JFrameAddComentary
      */
     public JFrameAddComentary() {
         initComponents();
+        S=this;
     }
 
     /**
@@ -32,6 +34,7 @@ public class JFrameAddComentary extends javax.swing.JFrame {
         JButtonAddComentary = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Biblioteka Online");
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);

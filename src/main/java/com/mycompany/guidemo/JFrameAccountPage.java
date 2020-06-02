@@ -11,11 +11,13 @@ package com.mycompany.guidemo;
  */
 public class JFrameAccountPage extends javax.swing.JFrame {
 
+    public static JFrameAccountPage S;
     /**
      * Creates new form JFrameAccountPage
      */
     public JFrameAccountPage() {
         initComponents();
+        S=this;
     }
 
     /**
@@ -52,6 +54,7 @@ public class JFrameAccountPage extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Biblioteka Online");
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rsz_userimage.png"))); // NOI18N
         jLabel1.setText("Tutaj będzie obrazek");
@@ -203,6 +206,11 @@ public class JFrameAccountPage extends javax.swing.JFrame {
 
         jMenuItem1.setText("Wyszukiwanie");
         jMenuItem1.setActionCommand("JButtonSearch");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem1);
 
         jMenuBar1.add(jMenu1);
@@ -245,40 +253,16 @@ public class JFrameAccountPage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JButtonCartActionPerformed
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        JFrameSearch.S.setVisible(true);
+        JFrameAccountPage.S.setVisible(false);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrameAccountPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrameAccountPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrameAccountPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrameAccountPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            JButtonChargeoid run() {
-                new JFrameAccountPage().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JButtonCart;

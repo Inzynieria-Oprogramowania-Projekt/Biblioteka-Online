@@ -34,6 +34,7 @@ public class JFrameRecoveryPassword extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Biblioteka Online");
 
         jLabel1.setText("Podaj email wykorzystany przy rejestracji");
 

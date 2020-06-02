@@ -11,11 +11,13 @@ package com.mycompany.guidemo;
  */
 public class JFrameKomentarz extends javax.swing.JFrame {
 
+    public static JFrameKomentarz S;
     /**
      * Creates new form JFrameKomentarz
      */
     public JFrameKomentarz() {
         initComponents();
+        S=this;
     }
 
     /**
@@ -32,11 +34,17 @@ public class JFrameKomentarz extends javax.swing.JFrame {
         JButtonHesitate = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Biblioteka Online");
 
         jLabel1.setText("Czy chcesz dodać komentarz?");
 
         JButtonConfirm.setText("Tak");
         JButtonConfirm.setActionCommand("JButtonConfirm");
+        JButtonConfirm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JButtonConfirmActionPerformed(evt);
+            }
+        });
 
         JButtonHesitate.setText("Nie");
         JButtonHesitate.setActionCommand("JButtonHesitate");
@@ -70,39 +78,15 @@ public class JFrameKomentarz extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void JButtonConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButtonConfirmActionPerformed
+        // TODO add your  andling code here:
+        JFrameAddComentary.S.setVisible(true);
+    }//GEN-LAST:event_JButtonConfirmActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrameKomentarz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrameKomentarz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrameKomentarz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrameKomentarz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new JFrameKomentarz().setVisible(true);
-            }
-        })JButtonConfirm
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JButtonConfirm;
     private javax.swing.JButton JButtonHesitate;

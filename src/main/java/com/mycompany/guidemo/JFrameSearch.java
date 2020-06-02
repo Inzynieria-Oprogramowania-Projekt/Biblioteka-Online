@@ -11,11 +11,13 @@ package com.mycompany.guidemo;
  */
 public class JFrameSearch extends javax.swing.JFrame {
 
+    public static JFrameSearch S;
     /**
      * Creates new form JFrameSearch
      */
     public JFrameSearch() {
         initComponents();
+        S=this;
     }
 
     /**
@@ -35,9 +37,10 @@ public class JFrameSearch extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        JMenuItemAccPage = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Biblioteka Online");
 
         JTextFieldSearch.setText("Wyszukaj");
         JTextFieldSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -65,9 +68,19 @@ public class JFrameSearch extends javax.swing.JFrame {
         jLabel1.setText("Brak wyników wyszukiwania");
 
         jMenu1.setText("File");
+        jMenu1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu1ActionPerformed(evt);
+            }
+        });
 
-        jMenuItem1.setText("Strona Konta");
-        jMenu1.add(jMenuItem1);
+        JMenuItemAccPage.setText("Strona Konta");
+        JMenuItemAccPage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JMenuItemAccPageActionPerformed(evt);
+            }
+        });
+        jMenu1.add(JMenuItemAccPage);
 
         jMenuBar1.add(jMenu1);
 
@@ -116,6 +129,16 @@ public class JFrameSearch extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JTextFieldSearchActionPerformed
 
+    private void JMenuItemAccPageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMenuItemAccPageActionPerformed
+        JFrameAccountPage.S.setVisible(true);
+        JFrameSearch.S.setVisible(false);
+    }//GEN-LAST:event_JMenuItemAccPageActionPerformed
+
+    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
+        // TODO ad your handling code here:
+    }//GEN-LAST:event_jMenu1ActionPerformed
+
+    
     /**
      * @param args the command line arguments
      */
@@ -153,11 +176,11 @@ public class JFrameSearch extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JButtonSearch;
+    private javax.swing.JMenuItem JMenuItemAccPage;
     private javax.swing.JTextField JTextFieldSearch;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable1;
@@ -183,8 +206,8 @@ public class JFrameSearch extends javax.swing.JFrame {
         return jMenuBar1;
     }
 
-    public javax.swing.JMenuItem getjMenuItem1() {
-        return jMenuItem1;
+    public javax.swing.JMenuItem getJMenuItemAccPage() {
+        return JMenuItemAccPage;
     }
 
     public javax.swing.JScrollPane getjScrollPane1() {
@@ -219,8 +242,8 @@ public class JFrameSearch extends javax.swing.JFrame {
         this.jMenuBar1 = jMenuBar1;
     }
 
-    public void setjMenuItem1(javax.swing.JMenuItem jMenuItem1) {
-        this.jMenuItem1 = jMenuItem1;
+    public void setJMenuItemAccPage(javax.swing.JMenuItem JMenuItemAccPage) {
+        this.JMenuItemAccPage = JMenuItemAccPage;
     }
 
     public void setjScrollPane1(javax.swing.JScrollPane jScrollPane1) {
