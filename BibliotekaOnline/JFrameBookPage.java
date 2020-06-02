@@ -257,7 +257,10 @@ public class JFrameBookPage extends JFrame {
     }
 
     private void JButtonOrderActionPerformed(java.awt.event.ActionEvent evt) {
-
+        if(ServerConnection.S.GetUsersBalance(User.S.getUsername()) >= ServerConnection.S.GetBookPrice(Book.S.getTitle())){
+            ServerConnection.S.ChangeUsersBalance(User.S.getUsername(),ServerConnection.S.GetBookPrice(Book.S.getTitle())*(-1));
+            ServerConnection.S.BuyBook(User.S.getUsername(), Book.S.getTitle());
+        }
     }
 
     private void JButtonHesitateActionPerformed(java.awt.event.ActionEvent evt) {

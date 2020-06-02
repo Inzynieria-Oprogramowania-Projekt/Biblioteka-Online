@@ -289,11 +289,22 @@ public class ServerConnection {
         try {
             statement=connection.createStatement();
             ResultSet rs = statement.executeQuery("SELECT price FROM Books WHERE title='" + book_title + "'");
+            rs.next();
             price = rs.getFloat("price");
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return price;
+    }
+
+    public String GetBookDesc(String book_title){
+        try{
+            statement=connection.createStatement();
+            ResultSet rs=statement.executeQuery("SELECT description FROM Books WHERE title='"+book_title+"'");
+            rs.next();
+            return rs.getString("description");
+        } catch(SQLException e){e.printStackTrace();}
+        return "";
     }
 
     public void ChangeUsersBalance(String username, float amount) {

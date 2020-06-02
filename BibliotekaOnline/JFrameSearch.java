@@ -150,12 +150,15 @@ public class JFrameSearch extends javax.swing.JFrame {
         JFrameAccountPage.S.getjLabel3().setText("- "+ServerConnection.S.GetUsersBalance(User.S.getUsername())+" zł");
 
         JFrameAccountPage.S.owned=ServerConnection.S.GetUsersBooks(User.S.getUsername());
-        String[] lista=new String[JFrameAccountPage.S.owned.size()/4];
+        String[] lista=new String[JFrameAccountPage.S.owned.size()/3];
 
-        for(int i=0;i<lista.length;i+=4){
+        for(int i=0;i<lista.length;i+=3){
             lista[i]=JFrameAccountPage.S.owned.get(i)+" - "+JFrameAccountPage.S.owned.get(i+1)+" "+JFrameAccountPage.S.owned.get(i+2);
         }
-        JFrameAccountPage.S.jList1=new JList(lista);
+
+        DefaultListModel def=new DefaultListModel();
+        for(int i=0;i<lista.length;i++) def.addElement(lista[i]);
+        JFrameAccountPage.S.jList1.setModel(def);
         JFrameAccountPage.S.setVisible(true);
         JFrameSearch.S.setVisible(false);
     }
@@ -171,26 +174,35 @@ public class JFrameSearch extends javax.swing.JFrame {
     private void JButtonSelectActionPerformed(java.awt.event.ActionEvent evt) {
         if(!jList1.isSelectionEmpty()) {
             Book.S=new Book(books.get(4*jList1.getSelectedIndex()), books.get(4*jList1.getSelectedIndex()+1), books.get(4*jList1.getSelectedIndex()+2), Float.parseFloat(books.get(4*jList1.getSelectedIndex()+3)));
+
+            JFrameBookPage.S.getOcena().setText(Float.toString(ServerConnection.S.GetOverallRating(Book.S.getTitle())));
+            JFrameBookPage.S.getjLabel5().setText(Book.S.getTitle());
+            JFrameBookPage.S.getjLabel6().setText(Book.S.getAuthor_name()+" "+Book.S.getAuthor_surname());
+            JFrameBookPage.S.getjLabel7().setText(ServerConnection.S.GetBookPrice(Book.S.getTitle())+" zł");
+            JFrameBookPage.S.getjTextArea1().setText(ServerConnection.S.GetBookDesc(Book.S.getTitle()));
             JFrameSearch.S.setVisible(false);
             JFrameBookPage.S.setVisible(true);
         }
     }
 
     private void JButtonSearchActionPerformed(java.awt.event.ActionEvent evt){
-        if(jRadioButton1.isSelected()){
-            books=ServerConnection.S.SearchByTitle(JTextFieldSearch.getText());
-        }
-        else if(jRadioButton2.isSelected()){
-            books=ServerConnection.S.SearchByAuthorsSurname(JTextFieldSearch.getText());
-        }
+        if(!(!jRadioButton1.isSelected() && !jRadioButton2.isSelected())) {
+            if (jRadioButton1.isSelected()) {
+                books = ServerConnection.S.SearchByTitle(JTextFieldSearch.getText());
+            } else if (jRadioButton2.isSelected()) {
+                books = ServerConnection.S.SearchByAuthorsSurname(JTextFieldSearch.getText());
+            }
 
-        String[] lista=new String[books.size()/4];
+            String[] lista = new String[books.size() / 4];
 
-        for(int i=0;i<lista.length;i+=4){
-            lista[i]=books.get(i)+" - "+books.get(i+1)+" "+books.get(i+2)+" - "+books.get(i+3)+" zł";
+            for (int i = 0; i < books.size(); i += 4) {
+                lista[i] = books.get(i) + " - " + books.get(i + 1) + " " + books.get(i + 2) + " - " + books.get(i + 3) + " zł";
+            }
+
+            DefaultListModel def=new DefaultListModel();
+            for(int i=0;i<lista.length;i++) def.addElement(lista[i]);
+            jList1.setModel(def);
         }
-
-        jList1=new JList(lista);
     }
 
 
