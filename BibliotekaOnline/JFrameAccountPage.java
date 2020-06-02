@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.util.ArrayList;
 
 public class JFrameAccountPage extends javax.swing.JFrame {
 
@@ -40,7 +41,7 @@ public class JFrameAccountPage extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Biblioteka Online");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rsz_userimage.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("Resources/rsz_userimage.png"))); // NOI18N
         jLabel1.setText("Tutaj będzie obrazek");
 
         jLabel2.setText("Administrator");
@@ -247,8 +248,6 @@ public class JFrameAccountPage extends javax.swing.JFrame {
         pack();
     }
 
-
-
     private void JButtonCartActionPerformed(java.awt.event.ActionEvent evt) {
 
     }
@@ -284,10 +283,14 @@ public class JFrameAccountPage extends javax.swing.JFrame {
     }
 
     private void JButtonReadActionPerformed(java.awt.event.ActionEvent evt) {
-
+        if(!jList1.isSelectionEmpty()) {
+            Book.S=new Book(owned.get(4*jList1.getSelectedIndex()), owned.get(4*jList1.getSelectedIndex()+1), owned.get(4*jList1.getSelectedIndex()+2), Float.parseFloat(owned.get(4*jList1.getSelectedIndex()+3)));
+            JFrameAccountPage.S.setVisible(false);
+            JFrame.S.setVisible(true);
+        }
     }
 
-
+    public ArrayList<String> owned;
     private javax.swing.JButton JButtonCart;
     private javax.swing.JButton JButtonChangePassword;
     private javax.swing.JButton JButtonCharge;
@@ -302,7 +305,7 @@ public class JFrameAccountPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList1;
+    public javax.swing.JList<String> jList1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;

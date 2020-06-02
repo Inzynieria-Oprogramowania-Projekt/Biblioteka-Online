@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.util.ArrayList;
 
 public class JFrameSearch extends javax.swing.JFrame {
 
@@ -37,6 +38,11 @@ public class JFrameSearch extends javax.swing.JFrame {
 
         JButtonSearch.setText("Wyszukaj");
         JButtonSearch.setActionCommand("JButtonSearch");
+        JButtonSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JButtonSearchActionPerformed(evt);
+            }
+        });
 
         jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
         jScrollPane1.setViewportView(jList1);
@@ -142,6 +148,14 @@ public class JFrameSearch extends javax.swing.JFrame {
     private void JMenuItemAccPageActionPerformed(java.awt.event.ActionEvent evt) {
         JFrameAccountPage.S.getjLabel2().setText(User.S.getUsername());
         JFrameAccountPage.S.getjLabel3().setText("- "+ServerConnection.S.GetUsersBalance(User.S.getUsername())+" zł");
+
+        JFrameAccountPage.S.owned=ServerConnection.S.GetUsersBooks(User.S.getUsername());
+        String[] lista=new String[JFrameAccountPage.S.owned.size()/4];
+
+        for(int i=0;i<lista.length;i+=4){
+            lista[i]=JFrameAccountPage.S.owned.get(i)+" - "+JFrameAccountPage.S.owned.get(i+1)+" "+JFrameAccountPage.S.owned.get(i+2);
+        }
+        JFrameAccountPage.S.jList1=new JList(lista);
         JFrameAccountPage.S.setVisible(true);
         JFrameSearch.S.setVisible(false);
     }
@@ -155,46 +169,32 @@ public class JFrameSearch extends javax.swing.JFrame {
     }
 
     private void JButtonSelectActionPerformed(java.awt.event.ActionEvent evt) {
-
-    }
-
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrameSearch.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrameSearch.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrameSearch.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrameSearch.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        if(!jList1.isSelectionEmpty()) {
+            Book.S=new Book(books.get(4*jList1.getSelectedIndex()), books.get(4*jList1.getSelectedIndex()+1), books.get(4*jList1.getSelectedIndex()+2), Float.parseFloat(books.get(4*jList1.getSelectedIndex()+3)));
+            JFrameSearch.S.setVisible(false);
+            JFrameBookPage.S.setVisible(true);
         }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new JFrameSearch().setVisible(true);
-            }
-        });
     }
 
-    // Variables declaration - do not modify
+    private void JButtonSearchActionPerformed(java.awt.event.ActionEvent evt){
+        if(jRadioButton1.isSelected()){
+            books=ServerConnection.S.SearchByTitle(JTextFieldSearch.getText());
+        }
+        else if(jRadioButton2.isSelected()){
+            books=ServerConnection.S.SearchByAuthorsSurname(JTextFieldSearch.getText());
+        }
+
+        String[] lista=new String[books.size()/4];
+
+        for(int i=0;i<lista.length;i+=4){
+            lista[i]=books.get(i)+" - "+books.get(i+1)+" "+books.get(i+2)+" - "+books.get(i+3)+" zł";
+        }
+
+        jList1=new JList(lista);
+    }
+
+
+    private ArrayList<String> books;
     private javax.swing.JButton JButtonSearch;
     private javax.swing.JButton JButtonSelect;
     private javax.swing.JMenuItem JMenuItemAccPage;
