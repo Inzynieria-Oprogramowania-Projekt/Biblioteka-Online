@@ -136,6 +136,8 @@ public class JFrameSearch extends JFrame {
     }
 
     private void JMenuItemAccPageActionPerformed(java.awt.event.ActionEvent evt) {
+        JFrameAccountPage.S.getjLabel2().setText(User.S.getUsername());
+        JFrameAccountPage.S.getjLabel3().setText("- "+ServerConnection.S.GetUsersBalance(User.S.getUsername())+" zł");
         JFrameAccountPage.S.setVisible(true);
         JFrameSearch.S.setVisible(false);
     }

@@ -29,7 +29,7 @@ public class JFrameRegister extends JFrame {
         jFormattedTextField1 = new javax.swing.JFormattedTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Biblioteka Online");
 
         labelUsername.setText("Nazwa Użytkownika");
@@ -161,8 +161,7 @@ public class JFrameRegister extends JFrame {
         boolean check=true;
 
         for(int i=0;i<mail.length();i++){
-            if(mail.charAt(i)=='.' && !at) check=false;
-            else if(mail.charAt(i)=='.') dot=true;
+            if(mail.charAt(i)=='.' && at) dot=true;
             if(mail.charAt(i)=='@') at=true;
         }
 
@@ -171,7 +170,11 @@ public class JFrameRegister extends JFrame {
 
         int reg=ServerConnection.S.Register(fieldUsername.getText(),fieldMail.getText(),new String(fieldPassword.getPassword()),jFormattedTextField1.getText());
 
-        if(!check){
+        if(fieldUsername.getText().equals(null) || fieldMail.getText().equals(null) || new String(fieldPassword.getPassword()).equals(null) || jFormattedTextField1.getText().equals(null)){
+            jLabelUsernameTaken.setText("Uzupełnij wszystkie pola!");
+            jLabelUsernameTaken.setVisible(true);
+        }
+        else if(!check){
             jLabelUsernameTaken.setText("Niepoprawny format adresu email!");
             jLabelUsernameTaken.setVisible(true);
         }

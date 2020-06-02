@@ -164,7 +164,7 @@ public class ServerConnection {
     }
 
     public boolean LogIn(String username, String password) {
-        if (LookForUsername(username) && LookForPassword(password))
+        if (LookForUsername(username) && CheckPassword(password, username))
             return true;
         else return false;
     }
@@ -191,11 +191,12 @@ public class ServerConnection {
         return false;
     }
 
-    public boolean LookForPassword(String password) {
+    public boolean CheckPassword(String password, String username) {
         try {
             statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery("SELECT password FROM Users");
-            while (rs.next()) if (rs.getString("password").equals(password)) return true;
+            ResultSet rs = statement.executeQuery("SELECT password FROM Users WHERE username='"+username+"'");
+            rs.next();
+            if (rs.getString("password").equals(password)) return true;
         } catch (SQLException e) {
             e.printStackTrace();
         }

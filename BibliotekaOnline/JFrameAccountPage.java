@@ -63,6 +63,11 @@ public class JFrameAccountPage extends JFrame {
 
         JButtonCharge.setText("Doładuj");
         JButtonCharge.setActionCommand("JButtonCharge");
+        JButtonCharge.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JButtonChargeActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Stan konta");
 
@@ -124,6 +129,11 @@ public class JFrameAccountPage extends JFrame {
 
         JButtonChangePassword.setText("Zmień Hasło");
         JButtonChangePassword.setActionCommand("JButtonChangePassword");
+        JButtonChangePassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JButtonChangePasswordActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -234,14 +244,34 @@ public class JFrameAccountPage extends JFrame {
 
     }
 
+    private void JButtonChangePasswordActionPerformed(java.awt.event.ActionEvent evt) {
+        if (ServerConnection.S.CheckPassword(new String(jPasswordField1.getPassword()), User.S.getUsername()) && new String(jPasswordField2.getPassword()).equals(new String(jPasswordField3.getPassword()))) {
+            ServerConnection.S.ChangePassword(User.S.getUsername(), new String(jPasswordField2.getPassword()));
+            jPasswordField1.setText(null);
+            jPasswordField2.setText(null);
+            jPasswordField3.setText(null);
+        }
+    }
+
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {
+        jPasswordField1.setText(null);
+        jPasswordField2.setText(null);
+        jPasswordField3.setText(null);
         JFrameSearch.S.setVisible(true);
         JFrameAccountPage.S.setVisible(false);
     }
 
     private void JButtonLogoutActionPerformed(java.awt.event.ActionEvent evt) {
+        jPasswordField1.setText(null);
+        jPasswordField2.setText(null);
+        jPasswordField3.setText(null);
         JFrameLogin.S.setVisible(true);
         JFrameAccountPage.S.setVisible(false);
+    }
+
+    private void JButtonChargeActionPerformed(java.awt.event.ActionEvent evt){
+        ServerConnection.S.ChangeUsersBalance(User.S.getUsername(), 10f);
+        jLabel3.setText("- "+ServerConnection.S.GetUsersBalance(User.S.getUsername())+" zł");
     }
 
     private javax.swing.JButton JButtonCart;

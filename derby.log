@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Tue Jun 02 19:57:06 CEST 2020:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585) systemu Derby: instancja a816c00e-0172-762d-fda2-000007682fc0
+Tue Jun 02 22:35:07 CEST 2020:
+ Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585) systemu Derby: instancja a816c00e-0172-76be-add6-000007682fc8
 w katalogu bazy danych C:\Users\Grzez\Desktop\Biblioteka-Online-full\Biblioteka_Online jdk.internal.loader.ClassLoaders$AppClassLoader@5a07e868 
 
 java.vendor=Oracle Corporation
@@ -12,5 +12,5 @@ os.version=10.0
 derby.system.home=null
 Uruchomiono program ładujący klasę bazy danych - derby.database.classpath=''
 ----------------------------------------------------------------
-Tue Jun 02 19:58:20 CEST 2020:
-Wyłączanie instancji a816c00e-0172-762d-fda2-000007682fc0
+Tue Jun 02 22:36:29 CEST 2020:
+Wyłączanie instancji a816c00e-0172-76be-add6-000007682fc8

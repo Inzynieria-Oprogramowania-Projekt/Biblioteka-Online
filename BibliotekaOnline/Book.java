@@ -4,6 +4,7 @@ public class Book {
     private String author_name;
     private String author_surname;
     private float price;
+    public static Book S;
 
     public Book(String title, String author_name, String author_surname, float price){
         this.title=title;
@@ -11,6 +12,8 @@ public class Book {
         this.author_surname=author_surname;
         this.price=price;
     }
+
+    public Book(){S=this;}
 
     public String getTitle() {
         return title;
