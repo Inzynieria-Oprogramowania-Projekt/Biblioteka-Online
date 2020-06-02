@@ -269,17 +269,7 @@ public class JFrameAccountPage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    Action select = new AbstractAction()
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            Jtable jTable1 = (JTable)e.getSource();
-            int modelRow = Integer.valueOf(e.getActionCommand());
-        }
-        
-    }
-            ButtonColumn buttoncolumn = new ButtonColumn();
-            buttoncolumn.setMnemonic(KeyEvent.VK_D);
+
     
     private void JButtonCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButtonCartActionPerformed
         // TODO add your handling code here:
