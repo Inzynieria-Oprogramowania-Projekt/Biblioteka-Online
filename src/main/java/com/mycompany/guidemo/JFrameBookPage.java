@@ -53,7 +53,7 @@ public class JFrameBookPage extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Biblioteka Online");
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tak.jpg"))); // NOI18N

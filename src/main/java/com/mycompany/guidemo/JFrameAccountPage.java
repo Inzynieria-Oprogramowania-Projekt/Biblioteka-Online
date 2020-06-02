@@ -5,6 +5,12 @@
  */
 package com.mycompany.guidemo;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.JTable;
+
 /**
  *
  * @author bgabr
@@ -188,15 +194,30 @@ public class JFrameAccountPage extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {"Ja", "To Ja", "Wybierz"},
+                {"Ty", "To Ty", "Wybierz"},
+                {"Mag ", "Ognia", "Wybierz"},
+                {"Rzuca", "Kulą", null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Tytuł", "Autor", ""
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane2.setViewportView(jTable1);
 
         jLabel4.setText("Lista posiadanych książek");
@@ -248,6 +269,18 @@ public class JFrameAccountPage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    Action select = new AbstractAction()
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            Jtable jTable1 = (JTable)e.getSource();
+            int modelRow = Integer.valueOf(e.getActionCommand());
+        }
+        
+    }
+            ButtonColumn buttoncolumn = new ButtonColumn();
+            buttoncolumn.setMnemonic(KeyEvent.VK_D);
+    
     private void JButtonCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButtonCartActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JButtonCartActionPerformed
