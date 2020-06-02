@@ -23,5 +23,8 @@ public class Main {
         search.setLocationRelativeTo(null);
         JFrameAccountPage accpage = new JFrameAccountPage();
         accpage.setLocationRelativeTo(null);
+        JFrameAddBook addbook = new JFrameAddBook();
+        addbook.setLocationRelativeTo(null);
+        
     }
 }

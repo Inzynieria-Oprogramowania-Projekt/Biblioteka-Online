@@ -57,6 +57,7 @@ public class JFrameAccountPage extends javax.swing.JFrame {
         jList1 = new javax.swing.JList<>();
         jLabel4 = new javax.swing.JLabel();
         JButtonRead = new javax.swing.JButton();
+        JButtonAddBook = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -206,6 +207,13 @@ public class JFrameAccountPage extends javax.swing.JFrame {
             }
         });
 
+        JButtonAddBook.setText("Dodaj książkę");
+        JButtonAddBook.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JButtonAddBookActionPerformed(evt);
+            }
+        });
+
         jMenu1.setText("File");
 
         jMenuItem1.setText("Wyszukiwanie");
@@ -238,7 +246,9 @@ public class JFrameAccountPage extends javax.swing.JFrame {
                             .addComponent(jLabel4)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(48, 48, 48)
-                        .addComponent(JButtonRead)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JButtonAddBook)
+                            .addComponent(JButtonRead))))
                 .addContainerGap(11, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -254,6 +264,8 @@ public class JFrameAccountPage extends javax.swing.JFrame {
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(JButtonRead)
+                        .addGap(18, 18, 18)
+                        .addComponent(JButtonAddBook)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -288,12 +300,18 @@ public class JFrameAccountPage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JButtonReadActionPerformed
 
+    private void JButtonAddBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButtonAddBookActionPerformed
+        JFrameAddBook.S.setVisible(true);
+        
+    }//GEN-LAST:event_JButtonAddBookActionPerformed
+
     /**
      * @param args the command line arguments
      */
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton JButtonAddBook;
     private javax.swing.JButton JButtonCart;
     private javax.swing.JButton JButtonChangePassword;
     private javax.swing.JButton JButtonCharge;
