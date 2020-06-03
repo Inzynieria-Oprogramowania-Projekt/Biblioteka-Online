@@ -6,6 +6,9 @@ public class JFrameBookPage extends JFrame {
 
     public JFrameBookPage() {
         initComponents();
+        JButtonOrder.setVisible(false);
+        JButtonHesitate.setText("Wróć");
+        jLabelRUSure.setVisible(false);
         S=this;
     }
 
@@ -253,18 +256,20 @@ public class JFrameBookPage extends JFrame {
     }
 
     private void JButtonBuyActionPerformed(java.awt.event.ActionEvent evt) {
-
-    }
-
-    private void JButtonOrderActionPerformed(java.awt.event.ActionEvent evt) {
         if(ServerConnection.S.GetUsersBalance(User.S.getUsername()) >= ServerConnection.S.GetBookPrice(Book.S.getTitle())){
             ServerConnection.S.ChangeUsersBalance(User.S.getUsername(),ServerConnection.S.GetBookPrice(Book.S.getTitle())*(-1));
             ServerConnection.S.BuyBook(User.S.getUsername(), Book.S.getTitle());
+            JFrameBookPage.S.getJButtonBuy().setVisible(false);
         }
     }
 
-    private void JButtonHesitateActionPerformed(java.awt.event.ActionEvent evt) {
+    private void JButtonOrderActionPerformed(java.awt.event.ActionEvent evt) {
 
+    }
+
+    private void JButtonHesitateActionPerformed(java.awt.event.ActionEvent evt) {
+        JFrameSearch.S.setVisible(true);
+        JFrameBookPage.S.setVisible(false);
     }
 
     private void JButtonUserGradeActionPerformed(java.awt.event.ActionEvent evt) {

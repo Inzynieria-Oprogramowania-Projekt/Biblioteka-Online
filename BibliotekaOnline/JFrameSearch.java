@@ -180,6 +180,15 @@ public class JFrameSearch extends javax.swing.JFrame {
             JFrameBookPage.S.getjLabel6().setText(Book.S.getAuthor_name()+" "+Book.S.getAuthor_surname());
             JFrameBookPage.S.getjLabel7().setText(ServerConnection.S.GetBookPrice(Book.S.getTitle())+" zł");
             JFrameBookPage.S.getjTextArea1().setText(ServerConnection.S.GetBookDesc(Book.S.getTitle()));
+
+            if(!ServerConnection.S.GetLatestReviews(Book.S.getTitle(),1).get(1).equals(null))
+                JFrameBookPage.S.getjTextArea2().setText(ServerConnection.S.GetLatestReviews(Book.S.getTitle(),1).get(1));
+            else
+                JFrameBookPage.S.getjTextArea2().setText("Brak komentarzy!");
+
+            if(ServerConnection.S.GetUsersBooks(User.S.getUsername()).contains(Book.S.getTitle()))
+                JFrameBookPage.S.getJButtonBuy().setVisible(false);
+
             JFrameSearch.S.setVisible(false);
             JFrameBookPage.S.setVisible(true);
         }
