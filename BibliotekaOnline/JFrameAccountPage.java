@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 
 public class JFrameAccountPage extends javax.swing.JFrame {
@@ -37,7 +38,7 @@ public class JFrameAccountPage extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
-
+        JButtonAddBook = new javax.swing.JButton();
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Biblioteka Online");
 
@@ -202,6 +203,12 @@ public class JFrameAccountPage extends javax.swing.JFrame {
                 jMenuItem1ActionPerformed(evt);
             }
         });
+        JButtonAddBook.setText("Dodaj książkę");
+        JButtonAddBook.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JButtonAddBookActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem1);
 
         jMenuBar1.add(jMenu1);
@@ -225,7 +232,9 @@ public class JFrameAccountPage extends javax.swing.JFrame {
                                                         .addComponent(jLabel4)))
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGap(48, 48, 48)
-                                                .addComponent(JButtonRead)))
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(JButtonAddBook)
+                                                        .addComponent(JButtonRead))))
                                 .addContainerGap(11, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -241,11 +250,18 @@ public class JFrameAccountPage extends javax.swing.JFrame {
                                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
                                                 .addComponent(JButtonRead)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(JButtonAddBook)
                                                 .addGap(0, 0, Short.MAX_VALUE)))
                                 .addContainerGap())
         );
 
         pack();
+    }
+
+    private void JButtonAddBookActionPerformed(ActionEvent evt) {
+        JFrameAddBook.S.setVisible(true);
+        JFrameAccountPage.S.setVisible(false);
     }
 
     private void JButtonCartActionPerformed(java.awt.event.ActionEvent evt) {
@@ -315,6 +331,7 @@ public class JFrameAccountPage extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JPasswordField jPasswordField3;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JButton JButtonAddBook;
     // End of variables declaration
 
     public javax.swing.JButton getJButtonCart() {

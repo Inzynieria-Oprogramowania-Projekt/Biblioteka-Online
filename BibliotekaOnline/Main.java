@@ -43,6 +43,9 @@ public class Main {
         JFrameAccountPage accpage = new JFrameAccountPage();
         accpage.setLocationRelativeTo(null);
 
+        JFrameAddBook addbook = new JFrameAddBook();
+        addbook.setLocationRelativeTo(null);
+
         JFrameAddComentary ac=new JFrameAddComentary();
         ac.setLocationRelativeTo(null);
 
