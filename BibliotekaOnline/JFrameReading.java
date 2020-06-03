@@ -1,16 +1,25 @@
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.canvas.parser.PdfTextExtractor;
+
 import javax.swing.*;
+import java.awt.*;
 
 public class JFrameReading extends javax.swing.JFrame {
 
     public static JFrameReading S;
     public JFrameReading() {
         initComponents();
+        JButtonNextPage.setVisible(true);
+        JButtonUndo.setText("Powrót");
+        jLabel1.setMaximumSize(new Dimension(300,400));
+        jLabel1.setMinimumSize(new Dimension(0,0));
+        jLabel1.setLineWrap(true);
         S=this;
     }
 
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JTextArea();
         JButtonForwardPage = new javax.swing.JButton();
         JButtonNextPage = new javax.swing.JButton();
         JButtonUndo = new javax.swing.JButton();
@@ -73,22 +82,38 @@ public class JFrameReading extends javax.swing.JFrame {
     }
 
     private void JButtonForwardPageActionPerformed(java.awt.event.ActionEvent evt) {
-
+        if(page_nr-1>0){
+            page_nr--;
+            JFrameReading.S.getjLabel1().setText(PdfTextExtractor.getTextFromPage(JFrameReading.S.getBook().getPage(page_nr)));
+        }
     }
 
     private void JButtonNextPageActionPerformed(java.awt.event.ActionEvent evt) {
-
+        if(page_nr+1<=book.getNumberOfPages()){
+            page_nr++;
+            JFrameReading.S.getjLabel1().setText(PdfTextExtractor.getTextFromPage(JFrameReading.S.getBook().getPage(page_nr)));
+        }
     }
 
     private void JButtonUndoActionPerformed(java.awt.event.ActionEvent evt) {
+        page_nr=1;
+        book.close();
         JFrameAccountPage.S.setVisible(true);
         JFrameReading.S.setVisible(false);
     }
 
-    // Variables declaration - do not modify
+    private PdfDocument book;
+    private int page_nr;
     private javax.swing.JButton JButtonForwardPage;
     private javax.swing.JButton JButtonNextPage;
     private javax.swing.JButton JButtonUndo;
-    private javax.swing.JLabel jLabel1;
-    // End of variables declaration
+    private JTextArea jLabel1;
+
+    public PdfDocument getBook(){return book;}
+    public void setBook(PdfDocument p){book=p;}
+
+    public int getPage_nr(){return page_nr;}
+    public void setPage_nr(int a){page_nr=a;}
+
+    public JTextArea getjLabel1(){return jLabel1;}
 }

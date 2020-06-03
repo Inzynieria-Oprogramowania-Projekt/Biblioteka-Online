@@ -10,5 +10,15 @@
     <orderEntry type="library" name="lib" level="application" />
     <orderEntry type="library" name="lib1" level="application" />
     <orderEntry type="library" exported="" name="lib" level="project" />
+    <orderEntry type="library" exported="" name="iText" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/slf4j-api-1.6.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

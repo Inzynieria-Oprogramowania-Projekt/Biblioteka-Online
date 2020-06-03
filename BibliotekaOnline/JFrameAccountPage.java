@@ -1,5 +1,11 @@
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfReader;
+import com.itextpdf.kernel.pdf.canvas.parser.PdfTextExtractor;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class JFrameAccountPage extends javax.swing.JFrame {
@@ -301,6 +307,13 @@ public class JFrameAccountPage extends javax.swing.JFrame {
     private void JButtonReadActionPerformed(java.awt.event.ActionEvent evt) {
         if(!jList1.isSelectionEmpty()) {
             Book.S=new Book(owned.get(3*jList1.getSelectedIndex()), owned.get(3*jList1.getSelectedIndex()+1), owned.get(3*jList1.getSelectedIndex()+2),0f);
+
+            try {
+                JFrameReading.S.setBook(new PdfDocument(new PdfReader(new File("Resources/"+Book.S.getTitle() + "-" + Book.S.getAuthor_name() + "_" + Book.S.getAuthor_surname()+".pdf"))));
+            } catch(IOException e){e.printStackTrace();}
+
+            JFrameReading.S.getjLabel1().setText(PdfTextExtractor.getTextFromPage(JFrameReading.S.getBook().getPage(1)));
+            JFrameReading.S.setPage_nr(1);
             JFrameAccountPage.S.setVisible(false);
             JFrameReading.S.setVisible(true);
         }

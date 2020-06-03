@@ -1,7 +1,7 @@
 public class JFrameAddBook extends javax.swing.JFrame {
 
     public static JFrameAddBook S;
-    
+
     public JFrameAddBook() {
         initComponents();
         S=this;
